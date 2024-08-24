@@ -1,0 +1,389 @@
+{% extends "base.html" %}
+{% block title %}Changed{% endblock %}
+
+{% block content %}
+
+<section class="video_loop">
+  <video autoplay muted loop class="header-video">
+    <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="text-box">
+    <h1>Welcome to the Port Of Spain City Corporation</h1>
+    <p>Is the Municipal Authority of the City of Port of Spain.<br> It is charged with providing local services geared
+      towards improving the quality of life of burgesses of the city and the thousands of transient population.</p>
+    <a href="" class="hero-btn">Visit Us To Know More</a>
+  </div>
+</section>
+
+ <!-- About Section -->
+ <section class="about">
+  <h1>History</h1>
+  <p>The Port of Spain Corporation (POSC) is the municipal authority of Port of Spain. It was
+    proclaimed by the then Governor on June 25th, 1914, and formed by the Legislative
+    Council on June 26th, 1914. The corporation has been sustained via numerous
+    legislative acts since then, with the most recent being the Municipal Corporations Act
+    No. 21 of 1990(MCA). The corporation's formal name is "The Mayor, Alderman,
+    Councillors and Citizens of the City of Port of Spain," which was constituted by statute
+    under the Port of Spain Corporation Ordinance (Chapter 39 No. 1, 1950 ED). With this
+    name, the organization shall enjoy eternal succession and the right to sue or be sued in
+    legal actions.</p>
+
+  <div class="row">
+    <div class="about-col">
+      <h3>About</h3>
+      <p>
+        The Port of Spain City Corporation (POSCC) is the municipal authority responsible for
+        the capital city of Port of Spain in Trinidad and Tobago. The organization provides local
+        services that are targeted towards improving the quality of life of persons within the city.
+        These services include sanitation, infrastructure, development, and maintenance of
+        public health.
+      </p>
+    </div>
+
+    <div class="about-col">
+      <h3>Aim</h3>
+      <p>
+        Our main aim is to have a fully functional site that is user-friendly, visually appealing
+        while fully satisfying the needs of all our stakeholders. The website must also enhance
+        the online presence of the corporation and increase community engagement.
+      </p>
+    </div>
+
+    <div class="about-col">
+      <h3>Services</h3>
+      <p>
+        The purpose of this proposal is to further improve the quality of life of residents and
+        visitors by creating, improving, and maintaining a comprehensive website that will allow
+        seamless access to important information that is continuously changing and efficient
+        request and delivery of critical services that support the smooth functioning of the city.
+        It will provide a needed means of communication between citizens and the organization
+        enabling it to carry out responsibilities more effectively.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Our Services Section -->
+  <section class="services">
+  <h1>Our Services</h1>
+  <p>The Port of Spain City Corporation provides a wide range of services to maintain and enhance the city’s
+    infrastructure and environment.</p>
+
+  <div class="row">
+    <div class="services-col">
+      <img src="images/buildings.jpeg" alt="Building Maintenance">
+      <div class="title-overlay">
+        <h3>Provision and Maintenance of Corporation Buildings</h3>
+      </div>
+      <div class="layer">
+        <h3>Provision and Maintenance of Corporation Buildings</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/drain.jpeg" alt="Drain Maintenance">
+      <div class="title-overlay">
+        <h3>Construction and Maintenance of Drains and Watercourses</h3>
+      </div>
+      <div class="layer">
+        <h3>Construction and Maintenance of Drains and Watercourses</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/parks.jpeg" alt="Parks and Public Spaces">
+      <div class="title-overlay">
+        <h3>Maintenance and Control of Parks and Public Spaces</h3>
+      </div>
+      <div class="layer">
+        <h3>Maintenance and Control of Parks and Public Spaces</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/infrastructure_development.jpeg" alt="Infrastructure Development">
+      <div class="title-overlay">
+        <h3>Infrastructure Development</h3>
+      </div>
+      <div class="layer">
+        <h3>Infrastructure Development</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/garbage_disposal.jpeg" alt="Garbage Disposal">
+      <div class="title-overlay">
+        <h3>Garbage Disposal</h3>
+      </div>
+      <div class="layer">
+        <h3>Garbage Disposal</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/vector_control.jpeg" alt="Vector Control">
+      <div class="title-overlay">
+        <h3>Chemical Treatment for Insect and Vector Control</h3>
+      </div>
+      <div class="layer">
+        <h3>Chemical Treatment for Insect and Vector Control</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/healthcare.jpeg" alt="Public Health">
+      <div class="title-overlay">
+        <h3>Public Nuisance Abatement and Primary Health Care</h3>
+      </div>
+      <div class="layer">
+        <h3>Public Nuisance Abatement and Primary Health Care</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/environment.jpg" alt="Environmental Maintenance">
+      <div class="title-overlay">
+        <h3>Environmental Maintenance and Watercourse Monitoring</h3>
+      </div>
+      <div class="layer">
+        <h3>Environmental Maintenance and Watercourse Monitoring</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/water_distribution.jpeg" alt="Water Distribution">
+      <div class="title-overlay">
+        <h3>Truck Borne Water Distribution</h3>
+      </div>
+      <div class="layer">
+        <h3>Truck Borne Water Distribution</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/litter_wardens.jpg" alt="Litter Prevention">
+      <div class="title-overlay">
+        <h3>Enforcement of the Litter Act</h3>
+      </div>
+      <div class="layer">
+        <h3>Enforcement of the Litter Act</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/cesspit_cleaning.jpeg" alt="Cesspit Cleaning">
+      <div class="title-overlay">
+        <h3>Cesspit Cleaning</h3>
+      </div>
+      <div class="layer">
+        <h3>Cesspit Cleaning</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/food_badge.jpeg" alt="Food Badges">
+      <div class="title-overlay">
+        <h3>Supply of Food Badges</h3>
+      </div>
+      <div class="layer">
+        <h3>Supply of Food Badges</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/markets.jpg" alt="Market Maintenance">
+      <div class="title-overlay">
+        <h3>Market Maintenance and Control</h3>
+      </div>
+      <div class="layer">
+        <h3>Market Maintenance and Control</h3>
+      </div>
+    </div>
+    <div class="services-col">
+      <img src="images/cemetery.jpg" alt="Burial Grounds">
+      <div class="title-overlay">
+        <h3>Maintenance of Burial Grounds and Crematorium</h3>
+      </div>
+      <div class="layer">
+        <h3>Maintenance of Burial Grounds and Crematorium</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Departments Section-->
+<section class="departments-section">
+  <div class="container">
+    <h1>Explore Our Departments</h1>
+    <div class="departments-row">
+      <!-- Communication Department -->
+      <div class="department-card">
+        <a href="communication.html" class="icon-link">
+          <i class="fas fa-bullhorn department-icon"></i> <!-- Communication Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Communication</h2>
+          <p>The Communications Department is a strategic hub dedicated to enhancing internal and external communication efforts...</p>
+          <a href="communication.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Procurement Department -->
+      <div class="department-card">
+        <a href="procurement.html" class="icon-link">
+          <i class="fas fa-shopping-cart department-icon"></i> <!-- Procurement Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Procurement</h2>
+          <p>The Procurement Department plays an integral part of the corporation and is crucial in the purchasing process...</p>
+          <a href="procurement.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Public Health Department -->
+      <div class="department-card">
+        <a href="public-health.html" class="icon-link">
+          <i class="fas fa-medkit department-icon"></i> <!-- Public Health Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Public Health</h2>
+          <p>The Public Health Department is led by the Principal Medical and Health Officer (PMHO) and focuses on public health initiatives...</p>
+          <a href="public-health.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Local Economic Development Department -->
+      <div class="department-card">
+        <a href="led.html" class="icon-link">
+          <i class="fas fa-chart-line department-icon"></i> <!-- Local Economic Development Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Local Economic Development</h2>
+          <p>The LED Department works towards the economic development of the region, helping to achieve sustainable growth...</p>
+          <a href="led.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Building Inspectorate -->
+      <div class="department-card">
+        <a href="building-inspectorate.html" class="icon-link">
+          <i class="fas fa-building department-icon"></i> <!-- Building Inspectorate Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Building Inspectorate</h2>
+          <p>The Building Inspectorate unit is responsible for development planning and control within the region...</p>
+          <a href="building-inspectorate.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Technical/Transport Department -->
+      <div class="department-card">
+        <a href="technical-transport.html" class="icon-link">
+          <i class="fas fa-tools department-icon"></i> <!-- Technical/Transport Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Technical/Transport</h2>
+          <p>The Technical/Transport Department is a crucial component within the organization, managing and maintaining transport infrastructure...</p>
+          <a href="technical-transport.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Disaster Management Department -->
+      <div class="department-card">
+        <a href="disaster-management.html" class="icon-link">
+          <i class="fas fa-exclamation-triangle department-icon"></i> <!-- Disaster Management Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Disaster Management</h2>
+          <p>The Disaster Management Unit is responsible for implementing strategies to mitigate, prepare for, respond to, and recover from disasters...</p>
+          <a href="disaster-management.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Municipal Police Department -->
+      <div class="department-card">
+        <a href="municipal-police.html" class="icon-link">
+          <i class="fas fa-balance-scale department-icon"></i> <!-- Municipal Police Icon -->
+        </a>
+        <div class="department-content">
+          <h2>Municipal Police</h2>
+          <p>The Municipal Police Department is responsible for maintaining public safety and enforcing laws within the specific municipality...</p>
+          <a href="municipal-police.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Information Section -->
+<section class="info-section">
+  <div class="info-container">
+    <div class="info-card">
+      <div class="info-icon">
+        <img src="news-icon.png" alt="News Announcements">
+      </div>
+      <h2>News/Announcements</h2>
+      <p>Keep updated and informed of what is happening within your regional corporation.</p>
+      <a href="#" class="info-btn">
+        <i class="fas fa-external-link-alt"></i> Read More
+      </a>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">
+        <img src="events-icon.png" alt="Events">
+      </div>
+      <h2>Events</h2>
+      <p>Events are a powerful way to bring people together, create memorable experiences, and achieve specific goals.</p>
+      <a href="#" class="info-btn">
+        <i class="fas fa-external-link-alt"></i> Read More
+      </a>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">
+        <img src="faqs-icon.png" alt="FAQs">
+      </div>
+      <h2>FAQs</h2>
+      <p>Questions can unlock knowledge and provide tips to help you frame inquiries that lead to insightful answers.</p>
+      <a href="#" class="info-btn">
+        <i class="fas fa-external-link-alt"></i> Read More
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Call To Action Section -->
+<section class="cta">
+  <h1>Get In Touch With the Port of Spain City Corporation Now</h1>
+  <a href="" class="hero-btn">CONTACT US</a>
+</section>
+
+<section class="council-section">
+  <div class="council-header">
+    <h1>Meet The Council</h1>
+    <p>Introducing the TPRC Council, a dedicated assembly focused on fostering collaboration, innovation, and sustainable growth across our diverse communities.</p>
+    <a href="#" class="read-more-btn">Read more</a>
+  </div>
+  
+  <div class="council-members">
+    <div class="council-member">
+      <img src="josiah-austin.jpg" alt="Josiah Austin" class="member-photo">
+      <h2>Josiah Austin</h2>
+      <p class="member-title">Chairman</p>
+      <p class="member-description">A chairman for a council serves as the presiding officer responsible for leading meetings, facilitating discussions, and ensuring effective decision-making within the council.</p>
+      <div class="social-links">
+        <a href="#" class="social-icon">Facebook Icon</a>
+        <!-- Add other social icons here -->
+      </div>
+    </div>
+
+    <div class="council-member">
+      <img src="clayton-blackman.jpg" alt="Clayton Blackman" class="member-photo">
+      <h2>Clayton Blackman</h2>
+      <p class="member-title">Vice Chairman</p>
+      <p class="member-description">The vice-chairman of a council serves as the deputy to the chairman, supporting in leadership responsibilities and presiding over meetings in the absence of the chairman.</p>
+      <div class="social-links">
+        <a href="#" class="social-icon">Facebook Icon</a>
+        <!-- Add other social icons here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
