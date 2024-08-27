@@ -2,274 +2,307 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}POSCC Website{% endblock %}</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_up.css') }}">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}POSCC Website{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_up.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 
 <body>
     <nav>
-      <a href="{{ url_for('views.home') }}"><img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}" id="poscclogo" alt="POSCC Logo"></a>
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="hideMenu()"></i>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li>
-            <a href="about.html">About Us<i class="fas fa-caret-down"></i></a>
-            <div class="dropdown-menu">
-              <ul>
-                <li><a href="#">Establishment</a></li>
-                <li><a href="#">Boundaries</a></li>
-                <li><a href="#">Vision and Mission</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="services.html">Our Services<i class="fas fa-caret-down"></i></a>
-            <div class="dropdown-menu">
-              <ul>
+       
+        <a href="{{ url_for('views.home') }}"><img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}"
+                id="poscclogo" alt="POSCC Logo"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="{{ url_for('views.home') }}">Home</a></li>
                 <li>
-                  <a href="#">Maintenance<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Road Repair Services</a></li>
-                      <li><a href="#">Sanitation Services</a></li>
-                      <li><a href="#">Tree Cutting</a></li>
-                    </ul>
-                  </div>
+                    <a href="about.html">About Us<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#">Establishment</a></li>
+                            <li><a href="#">Boundaries</a></li>
+                            <li><a href="#">Vision and Mission</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
-                  <a href="#">Public Health<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Public Complaints</a></li>
-                      <li><a href="#">Food Badge Application</a></li>
-                      <li><a href="#">Water Truck Services</a></li>
-                      <li><a href="#">Cesspool Cleaning</a></li>
-                    </ul>
-                  </div>
+                    <a href="services.html">Our Services<i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="#">Maintenance<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Road Repair Services</a></li>
+                                        <li><a href="#">Sanitation Services</a></li>
+                                        <li><a href="#">Tree Cutting</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Public Health<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Public Complaints</a></li>
+                                        <li><a href="#">Food Badge Application</a></li>
+                                        <li><a href="#">Water Truck Services</a></li>
+                                        <li><a href="#">Cesspool Cleaning</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">News/Announcements</a></li>
+                            <li><a href="#">Market</a></li>
+                            <li><a href="#">Geospatial Mapping Service</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li><a href="#">News/Announcements</a></li>
-                <li><a href="#">Market</a></li>
-                <li><a href="#">Geospatial Mapping Service</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">FAQs</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#">Departments</a>
-            <div class="dropdown-menu">
-              <ul>
-                <li>
-                  <a href="#">City Administration<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Office of the C.E.O</a></li>
-                    </ul>
-                  </div>
+                <li><a href="#">Departments</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="#">City Administration<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Office of the C.E.O</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">City Engineering<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Administrative Department</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">City Police<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Administrative Department</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Disaster Management<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Internal and External Administration</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Procurement<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Annual Procurement Plan</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Public Health<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Public Health Services</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Local Economic Development<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Economic Development Initiatives</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
-                  <a href="#">City Engineering<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Administrative Department</a></li>
-                    </ul>
-                  </div>
+                <li><a href="#">Meet The Council</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="#">Mayor and Deputy Mayor</a>
+                            </li>
+                            <li>
+                                <a href="#">Councilors</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
-                  <a href="#">City Police<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Administrative Department</a></li>
-                    </ul>
-                  </div>
+                <li><a href="#">Projects</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="#">List Of Current<br>And Completed Projects</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
-                  <a href="#">Disaster Management<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Internal and External Administration</a></li>
-                    </ul>
-                  </div>
+                <li><a href="#">Contact Us</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="#">Contact Information<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="#">Phone Numbers</a></li>
+                                        <li><a href="#">Email Addresses</a></li>
+                                        <li><a href="#">Physical Addresses</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
-                  <a href="#">Procurement<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Annual Procurement Plan</a></li>
-                    </ul>
-                  </div>
+                <li><a href="#">Help</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li>
+                                <a href="#">FAQs</a>
+                            </li>
+                            <li>
+                                <a href="#">Chat Bot</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
-                  <a href="#">Public Health<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Public Health Services</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="#">Local Economic Development<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Economic Development Initiatives</a></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#">Meet The Council</a>
-            <div class="dropdown-menu">
-              <ul>
-                <li>
-                  <a href="#">Mayor and Deputy Mayor</a>
-                </li>
-                <li>
-                  <a href="#">Councilors</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#">Projects</a>
-            <div class="dropdown-menu">
-              <ul>
-                <li>
-                  <a href="#">List Of Current<br>And Completed Projects</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#">Contact Us</a>
-            <div class="dropdown-menu">
-              <ul>
-                <li>
-                  <a href="#">Contact Information<i class="fas fa-caret-right"></i></a>
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="#">Phone Numbers</a></li>
-                      <li><a href="#">Email Addresses</a></li>
-                      <li><a href="#">Physical Addresses</a></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#">Help</a>
-            <div class="dropdown-menu">
-              <ul>
-                <li>
-                  <a href="#">FAQs</a>
-                </li>
-                <li>
-                  <a href="#">Chat Bot</a>
-                </li>
-                <li>
-                  <a href="#">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/sign-up">Signup</a></li>
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
+                {% if current_user.is_authenticated %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/sign-up">Signup</a></li>
+            {% endif %}
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-
-  </section>
-  <div class="container">
-    {% block content %}
-    {% endblock %}
-  </div>
-
-  
-
-  <!-- Footer Section -->
-  <section class="footer">
-    <h4>About Us</h4>
-    <p>This project will enhance the Port of Spain City Corporation’s online <br>
-      presence, overall efficiency and the convenience the organization provides towards enhancing <br>
-      the quality of life of residents and visitors of the city of Port of Spain. </p>
-    <div class="icons">
-      <i class="fa fa-facebook"></i>
-      <i class="fa fa-twitter"></i>
-      <i class="fa fa-instagram"></i>
-      <i class="fa fa-linkedin"></i>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alert-dismissable fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
     </div>
-  </section>
 
-  <!-- JavaScript for Toggle Menu -->
-  <script>
-    var navLinks = document.getElementById("navLinks");
+    </section>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
 
-    function showMenu() {
-      navLinks.style.right = "0";
-    }
 
-    function hideMenu() {
-      navLinks.style.right = "-200px";
-    }
 
-    function preventOverflow() {
-      const dropdowns = document.querySelectorAll('.dropdown-menu, .dropdown-menu-1');
+    <!-- Footer Section -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>This project will enhance the Port of Spain City Corporation’s online <br>
+            presence, overall efficiency and the convenience the organization provides towards enhancing <br>
+            the quality of life of residents and visitors of the city of Port of Spain. </p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </section>
 
-      dropdowns.forEach(dropdown => {
-        const rect = dropdown.getBoundingClientRect();
-        const isOverflowing = rect.right > window.innerWidth;
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
 
-        if (isOverflowing) {
-          dropdown.classList.add('is-overflowing');
-        } else {
-          dropdown.classList.remove('is-overflowing');
+        function showMenu() {
+            navLinks.style.right = "0";
         }
-      });
-    }
 
-    window.addEventListener('resize', preventOverflow);
-    document.addEventListener('DOMContentLoaded', preventOverflow);
-
-    function checkOverflow(element) {
-      const rect = element.getBoundingClientRect();
-      return rect.right > window.innerWidth || rect.left < 0;
-    }
-
-    document.querySelectorAll('.nav-links ul li .dropdown-menu').forEach(dropdown => {
-      dropdown.addEventListener('mouseover', function () {
-        this.classList.remove('is-overflowing');
-        if (checkOverflow(this)) {
-          this.classList.add('is-overflowing');
+        function hideMenu() {
+            navLinks.style.right = "-200px";
         }
-      });
 
-      dropdown.querySelectorAll('.dropdown-menu-1').forEach(subDropdown => {
-        subDropdown.addEventListener('mouseover', function () {
-          this.classList.remove('is-overflowing');
-          if (checkOverflow(this)) {
-            this.classList.add('is-overflowing');
-          }
+        function preventOverflow() {
+            const dropdowns = document.querySelectorAll('.dropdown-menu, .dropdown-menu-1');
+
+            dropdowns.forEach(dropdown => {
+                const rect = dropdown.getBoundingClientRect();
+                const isOverflowing = rect.right > window.innerWidth;
+
+                if (isOverflowing) {
+                    dropdown.classList.add('is-overflowing');
+                } else {
+                    dropdown.classList.remove('is-overflowing');
+                }
+            });
+        }
+
+        window.addEventListener('resize', preventOverflow);
+        document.addEventListener('DOMContentLoaded', preventOverflow);
+
+        function checkOverflow(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.right > window.innerWidth || rect.left < 0;
+        }
+
+        document.querySelectorAll('.nav-links ul li .dropdown-menu').forEach(dropdown => {
+            dropdown.addEventListener('mouseover', function () {
+                this.classList.remove('is-overflowing');
+                if (checkOverflow(this)) {
+                    this.classList.add('is-overflowing');
+                }
+            });
+
+            dropdown.querySelectorAll('.dropdown-menu-1').forEach(subDropdown => {
+                subDropdown.addEventListener('mouseover', function () {
+                    this.classList.remove('is-overflowing');
+                    if (checkOverflow(this)) {
+                        this.classList.add('is-overflowing');
+                    }
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 </body>
 
