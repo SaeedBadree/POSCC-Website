@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_up.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/council.css') }}">
+   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,7 +24,16 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+            margin: 50px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,7 +46,7 @@
             <ul>
                 <li><a href="{{ url_for('views.home') }}">Home</a></li>
                 <li>
-                    <a href="about.html">About Us<i class="fas fa-caret-down"></i></a>
+                    <a href="{{ url_for('views.about') }}">About Us<i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
                             <li><a href="#">Establishment</a></li>
@@ -43,7 +56,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="services.html">Our Services<i class="fas fa-caret-down"></i></a>
+                    <a href="{{ url_for('views.services') }}">Our Services<i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
                             <li>
@@ -69,13 +82,13 @@
                             </li>
                             <li><a href="#">News/Announcements</a></li>
                             <li><a href="#">Market</a></li>
-                            <li><a href="#">Geospatial Mapping Service</a></li>
+                            <li><a href="{{ url_for('views.geospatial') }}">Geospatial Mapping Service</a></li>
                             <li><a href="#">Events</a></li>
                             <li><a href="#">FAQs</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Departments</a>
+                <li><a href="{{ url_for('views.departments') }}">Departments</a>
                     <div class="dropdown-menu">
                         <ul>
                             <li>
@@ -111,10 +124,10 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#">Procurement<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.procurement') }}">Procurement<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="#">Annual Procurement Plan</a></li>
+                                        <li><a href="{{ url_for('views.procurement') }}">Annual Procurement Plan</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -137,7 +150,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Meet The Council</a>
+                <li><a href="{{ url_for('views.meet_the_council') }}">Meet The Council</a>
                     <div class="dropdown-menu">
                         <ul>
                             <li>
@@ -149,7 +162,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Projects</a>
+                <li><a href="{{ url_for('views.projects') }}">Projects</a>
                     <div class="dropdown-menu">
                         <ul>
                             <li>
@@ -233,16 +246,55 @@
 
     <!-- Footer Section -->
     <section class="footer">
-        <h4>About Us</h4>
-        <p>This project will enhance the Port of Spain City Corporation’s online <br>
-            presence, overall efficiency and the convenience the organization provides towards enhancing <br>
-            the quality of life of residents and visitors of the city of Port of Spain. </p>
-        <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-linkedin"></i>
-        </div>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Port of Spain At A Glance</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Governance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Maintenance</a></li>
+                        <li><a href="#">Public Health</a></li>
+                        <li><a href="#">Sanitation</a></li>
+                        <li><a href="#">Cesspool Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Departments</h4>
+                    <ul>
+                        <li><a href="#">City Engineering</a></li>
+                        <li><a href="#">Procurement</a></li>
+                        <li><a href="#">Municipal Police</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#">Contact Information</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Chat Bot</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}" alt="POSCC Logo">
+                </div>
+                <div class="footer-social">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="footer-legal">
+                    <p>Terms of Use | Privacy Policy | © 2024 POSCC. All Rights Reserved.</p>
+                </div>
+            </div>
     </section>
 
     <!-- JavaScript for Toggle Menu -->
@@ -302,7 +354,24 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view to the given location and zoom level
+        var map = L.map('map').setView([10.6918, -61.2225], 13);
+
+        // Set up the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Add a marker at the given location
+        var marker = L.marker([10.6918, -61.2225]).addTo(map)
+            .bindPopup("<b>Hello world!</b><br />This is Port of Spain.")
+            .openPopup();
+    </script>
 
 </body>
 

@@ -1,0 +1,21 @@
+.procurement-container {
+    padding: 20px;
+    text-align: center;
+}
+.download-section {
+    margin-top: 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #0073ff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #005bb5;
+}

@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - POSCC</title>
-    <link rel="stylesheet" href="services.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+{% block title %}Our Services - POSCC{% endblock %}
 
-<body>
-    <!-- Include your existing navigation bar -->
-    <nav>
-        <a href="index.html"><img src="images/POSCC_Logo.jpg" id="poscclogo" alt="POSCC Logo"></a>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="departments.html">Departments</a></li>
-                <li><a href="council.html">Meet The Council</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-
+{% block content %}
     <!-- Services Header Section -->
     <section class="services-header">
         <div class="services-header-content">
@@ -46,7 +18,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/buildings.jpeg" alt="Building Maintenance">
+                        <img src="{{ url_for('static', filename='images/buildings.jpeg') }}" alt="Building Maintenance">
                         <h3>Provision and Maintenance of Corporation Buildings</h3>
                     </div>
                     <div class="service-card-back">
@@ -59,7 +31,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/drain.jpeg" alt="Drain Maintenance">
+                        <img src="{{ url_for('static', filename='images/drain.jpeg') }}" alt="Drain Maintenance">
                         <h3>Construction and Maintenance of Drains and Watercourses</h3>
                     </div>
                     <div class="service-card-back">
@@ -72,7 +44,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/parks.jpeg" alt="Parks and Public Spaces">
+                        <img src="{{ url_for('static', filename='images/parks.jpeg') }}" alt="Parks and Public Spaces">
                         <h3>Maintenance and Control of Parks and Public Spaces</h3>
                     </div>
                     <div class="service-card-back">
@@ -85,7 +57,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/infrastructure_development.jpeg" alt="Infrastructure Development">
+                        <img src="{{ url_for('static', filename='images/infrastructure_development.jpeg') }}" alt="Infrastructure Development">
                         <h3>Infrastructure Development</h3>
                     </div>
                     <div class="service-card-back">
@@ -98,7 +70,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/garbage_disposal.jpeg" alt="Garbage Disposal">
+                        <img src="{{ url_for('static', filename='images/garbage_disposal.jpeg') }}" alt="Garbage Disposal">
                         <h3>Garbage Disposal</h3>
                     </div>
                     <div class="service-card-back">
@@ -111,7 +83,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/vector_control.jpeg" alt="Vector Control">
+                        <img src="{{ url_for('static', filename='images/vector_control.jpeg') }}" alt="Vector Control">
                         <h3>Chemical Treatment for Insect and Vector Control</h3>
                     </div>
                     <div class="service-card-back">
@@ -124,7 +96,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/healthcare.jpeg" alt="Public Health">
+                        <img src="{{ url_for('static', filename='images/healthcare.jpeg') }}" alt="Public Health">
                         <h3>Public Nuisance Abatement and Primary Health Care</h3>
                     </div>
                     <div class="service-card-back">
@@ -137,7 +109,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/environment.jpg" alt="Environmental Maintenance">
+                        <img src="{{ url_for('static', filename='images/environment.jpg') }}" alt="Environmental Maintenance">
                         <h3>Environmental Maintenance and Watercourse Monitoring</h3>
                     </div>
                     <div class="service-card-back">
@@ -150,7 +122,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/water_distribution.jpeg" alt="Water Distribution">
+                        <img src="{{ url_for('static', filename='images/water_distribution.jpeg') }}" alt="Water Distribution">
                         <h3>Truck Borne Water Distribution</h3>
                     </div>
                     <div class="service-card-back">
@@ -163,7 +135,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/litter_wardens.jpg" alt="Litter Prevention">
+                        <img src="{{ url_for('static', filename='images/litter_wardens.jpg') }}" alt="Litter Prevention">
                         <h3>Enforcement of the Litter Act</h3>
                     </div>
                     <div class="service-card-back">
@@ -176,7 +148,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/cesspit_cleaning.jpeg" alt="Cesspit Cleaning">
+                        <img src="{{ url_for('static', filename='images/cesspit_cleaning.jpeg') }}" alt="Cesspit Cleaning">
                         <h3>Cesspit Cleaning</h3>
                     </div>
                     <div class="service-card-back">
@@ -189,7 +161,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/food_badge.jpeg" alt="Food Badges">
+                        <img src="{{ url_for('static', filename='images/food_badge.jpeg') }}" alt="Food Badges">
                         <h3>Supply of Food Badges</h3>
                     </div>
                     <div class="service-card-back">
@@ -202,7 +174,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/markets.jpg" alt="Market Maintenance">
+                        <img src="{{ url_for('static', filename='images/markets.jpg') }}" alt="Market Maintenance">
                         <h3>Market Maintenance and Control</h3>
                     </div>
                     <div class="service-card-back">
@@ -215,7 +187,7 @@
             <div class="service-card">
                 <div class="service-card-inner">
                     <div class="service-card-front">
-                        <img src="images/cemetery.jpg" alt="Burial Grounds">
+                        <img src="{{ url_for('static', filename='images/cemetery.jpg') }}" alt="Burial Grounds">
                         <h3>Maintenance of Burial Grounds and Crematorium</h3>
                     </div>
                     <div class="service-card-back">
@@ -223,34 +195,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+{% endblock %}
 
-    <!-- Footer Section -->
-    <section class="footer">
-        <h4>About Us</h4>
-        <p>This project will enhance the Port of Spain City Corporation’s online presence, overall efficiency, and the convenience the organization provides towards enhancing the quality of life of residents and visitors of the city of Port of Spain.</p>
-        <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-linkedin"></i>
-        </div>
-    </section>
 
-    <!-- JavaScript for Toggle Menu -->
-    <script>
-        var navLinks = document.getElementById("navLinks");
-
-        function showMenu() {
-            navLinks.style.right = "0";
-        }
-
-        function hideMenu() {
-            navLinks.style.right = "-200px";
-        }
-    </script>
-</body>
-
-</html>
