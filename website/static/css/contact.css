@@ -1,0 +1,112 @@
+/* Contact Section Styles */
+.contact-section {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+.contact-header {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust the height based on your design needs */
+    overflow: hidden;
+}
+
+.contact-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%); /* Darken the image slightly to make the text stand out */
+}
+
+.contact-title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.contact-title-overlay h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Map and Info */
+.map-and-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #004d26;
+    color: #ffffff;
+}
+
+.hours, .contact-info {
+    width: 25%;
+}
+
+.map-container {
+    width: 50%;
+}
+
+.map-container #map {
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.social-icons i {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.directory-section {
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.directory-section h2 {
+    font-size: 2em;
+    color: #004d26;
+    margin-bottom: 30px;
+}
+
+.directory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.directory-item h3 {
+    color: #004d26;
+    margin-bottom: 15px;
+}
+
+.directory-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.directory-item ul li {
+    padding: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .map-and-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hours, .contact-info, .map-container {
+        width: 100%;
+    }
+
+    .directory-grid {
+        grid-template-columns: 1fr;
+    }
+}

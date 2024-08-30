@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for
+from flask import Blueprint, render_template, url_for, request, jsonify
 from flask_login import login_required, current_user
 
 views = Blueprint('views', __name__)
@@ -45,17 +45,12 @@ def meet_the_council():
     ]
     return render_template('council.html', councillors=councillors)
 
-@views.route('/projects')
-def projects():
-    return render_template('projects.html')
 
 @views.route('/contact')
 def contact():
     return render_template('contact.html')
 
-@views.route('/help')
-def help():
-    return render_template('help.html')
+
 
 @views.route('/geospatial')
 def geospatial():
@@ -65,3 +60,60 @@ def geospatial():
 def procurement():
     pdf_url = url_for('static', filename='files/AnnualProcurement.pdf')
     return render_template('procurement.html', pdf_url=pdf_url)
+
+
+@views.route('/projects')
+def projects():
+    current_projects = [
+        {
+            'id': '1',
+            'title': 'Road Improvement Project',
+            'image': 'images/road_improvement.jpg',
+            'description': 'This project involves the improvement of major roads...'
+        },
+        {
+            'id': '2',
+            'title': 'New Community Center',
+            'image': 'images/community_center.jpg',
+            'description': 'A new community center is being built...'
+        }
+    ]
+
+    completed_projects = [
+        {
+            'id': '3',
+            'title': 'City Park Renovation',
+            'image': 'images/city_park.jpg',
+            'description': 'The city park renovation was completed...'
+        },
+        {
+            'id': '4',
+            'title': 'Downtown Cleanup',
+            'image': 'images/downtown_cleanup.jpg',
+            'description': 'A major cleanup initiative was successfully...'
+        }
+    ]
+
+    return render_template('projects.html', current_projects=current_projects, completed_projects=completed_projects)
+
+
+@views.route('/help')
+def help():
+    return render_template('help.html')
+
+
+@views.route('/chatbot', methods=['POST'])
+def chatbot():
+    user_message = request.json.get('message')
+    
+    # Simple logic to respond to specific questions
+    if "hours" in user_message.lower():
+        response = "The Port of Spain City Corporation is open from 8am to 4pm, Monday to Friday."
+    elif "building permit" in user_message.lower():
+        response = "You can apply for a building permit through our online portal or by visiting the Building Inspectorate office."
+    elif "property taxes" in user_message.lower():
+        response = "Property taxes can be paid at the Finance Department or through our online payment system."
+    else:
+        response = "Thank you for your message. We will get back to you shortly."
+    
+    return jsonify({"response": response})

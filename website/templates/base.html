@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/council.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,7 +174,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Contact Us</a>
+                <li><a href="{{ url_for('views.contact') }}">Contact Us</a>
                     <div class="dropdown-menu">
                         <ul>
                             <li>
@@ -187,7 +190,7 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#">Help</a>
+                <li><a href="{{ url_for('views.help') }}">Help</a>
                     <div class="dropdown-menu">
                         <ul>
                             <li>
@@ -372,6 +375,9 @@
             .bindPopup("<b>Hello world!</b><br />This is Port of Spain.")
             .openPopup();
     </script>
+
+<script src="{{ url_for('static', filename='js/projects.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script> 
 
 </body>
 
