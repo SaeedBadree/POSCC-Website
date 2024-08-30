@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
-   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,7 +28,7 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         #map {
@@ -41,7 +41,7 @@
 
 <body>
     <nav>
-       
+
         <a href="{{ url_for('views.home') }}"><img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}"
                 id="poscclogo" alt="POSCC Logo"></a>
         <div class="nav-links" id="navLinks">
@@ -127,10 +127,12 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="{{ url_for('views.procurement') }}">Procurement<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.procurement') }}">Procurement<i
+                                        class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="{{ url_for('views.procurement') }}">Annual Procurement Plan</a></li>
+                                        <li><a href="{{ url_for('views.procurement') }}">Annual Procurement Plan</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -207,10 +209,10 @@
                 </li>
                 {% if current_user.is_authenticated %}
                 <li><a href="/logout">Logout</a></li>
-            {% else %}
+                {% else %}
                 <li><a href="/login">Login</a></li>
                 <li><a href="/sign-up">Signup</a></li>
-            {% endif %}
+                {% endif %}
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -249,55 +251,55 @@
 
     <!-- Footer Section -->
     <section class="footer">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>About Us</h4>
-                    <ul>
-                        <li><a href="#">Port of Spain At A Glance</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Governance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#">Maintenance</a></li>
-                        <li><a href="#">Public Health</a></li>
-                        <li><a href="#">Sanitation</a></li>
-                        <li><a href="#">Cesspool Cleaning</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Departments</h4>
-                    <ul>
-                        <li><a href="#">City Engineering</a></li>
-                        <li><a href="#">Procurement</a></li>
-                        <li><a href="#">Municipal Police</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><a href="#">Contact Information</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Chat Bot</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Port of Spain At A Glance</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Governance</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-logo">
-                    <img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}" alt="POSCC Logo">
-                </div>
-                <div class="footer-social">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-instagram"></i>
-                    <i class="fa fa-linkedin"></i>
-                </div>
-                <div class="footer-legal">
-                    <p>Terms of Use | Privacy Policy | © 2024 POSCC. All Rights Reserved.</p>
-                </div>
+            <div class="footer-column">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#">Maintenance</a></li>
+                    <li><a href="#">Public Health</a></li>
+                    <li><a href="#">Sanitation</a></li>
+                    <li><a href="#">Cesspool Cleaning</a></li>
+                </ul>
             </div>
+            <div class="footer-column">
+                <h4>Departments</h4>
+                <ul>
+                    <li><a href="#">City Engineering</a></li>
+                    <li><a href="#">Procurement</a></li>
+                    <li><a href="#">Municipal Police</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="#">Contact Information</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Chat Bot</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}" alt="POSCC Logo">
+            </div>
+            <div class="footer-social">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="footer-legal">
+                <p>Terms of Use | Privacy Policy | © 2024 POSCC. All Rights Reserved.</p>
+            </div>
+        </div>
     </section>
 
     <!-- JavaScript for Toggle Menu -->
@@ -376,8 +378,8 @@
             .openPopup();
     </script>
 
-<script src="{{ url_for('static', filename='js/projects.js') }}"></script> 
-<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
 
 </body>
 
