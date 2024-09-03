@@ -3,64 +3,54 @@
 
 {% block content %}
 
+<!-- Video Loop Section -->
 <section class="video_loop">
-  <video autoplay muted loop class="header-video">
+  <video autoplay muted loop id="header-video">
     <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <div class="video-overlay">
   <div class="text-box">
     <h1>Welcome to the Port Of Spain City Corporation</h1>
     <p>Is the Municipal Authority of the City of Port of Spain.<br> It is charged with providing local services geared
       towards improving the quality of life of burgesses of the city and the thousands of transient population.</p>
     <a href="" class="hero-btn">Visit Us To Know More</a>
   </div>
+</div>
 </section>
 
- <!-- About Section -->
- <section class="about">
-  <h1>History</h1>
-  <p>The Port of Spain Corporation (POSC) is the municipal authority of Port of Spain. It was
-    proclaimed by the then Governor on June 25th, 1914, and formed by the Legislative
-    Council on June 26th, 1914. The corporation has been sustained via numerous
-    legislative acts since then, with the most recent being the Municipal Corporations Act
-    No. 21 of 1990(MCA). The corporation's formal name is "The Mayor, Alderman,
-    Councillors and Citizens of the City of Port of Spain," which was constituted by statute
-    under the Port of Spain Corporation Ordinance (Chapter 39 No. 1, 1950 ED). With this
-    name, the organization shall enjoy eternal succession and the right to sue or be sued in
-    legal actions.</p>
+<!-- About Section -->
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-content">
+      <h1>About Us</h1>
+      <p>The Port of Spain City Corporation (POSCC) is the municipal authority responsible for 
+      the capital city of Port of Spain in Trinidad and Tobago. The organization provides local 
+      services that are targeted towards improving the quality of life of persons within the city.   
+      These services include sanitation, infrastructure, development, and maintenance of 
+      public health.</p>
+      
+      <h2>Boundaries</h2>
+      <p>The City's boundaries span from the sea in the south to the foothills of the Northern Range; 
+      in the west from the Cocorite Walkover, along Fort George Road into Long Circular Road, 
+      to a point just below the Trinidad Hilton.</p>
+      
+      <h2>Establishment</h2>
+      <p>The Port of Spain Corporation (POSC) is the municipal authority of Port of Spain,
+      proclaimed by the then Governor on June 25, 1914, established by the Legislative
+      Council on June 26, 1914, and continued over time by various acts of Parliament, the
+      most recent being the Municipal Corporations Act No. 21 of 1990 (MCA).</p>
+  </div>
 
-  <div class="row">
-    <div class="about-col">
-      <h3>About</h3>
-      <p>
-        The Port of Spain City Corporation (POSCC) is the municipal authority responsible for
-        the capital city of Port of Spain in Trinidad and Tobago. The organization provides local
-        services that are targeted towards improving the quality of life of persons within the city.
-        These services include sanitation, infrastructure, development, and maintenance of
-        public health.
-      </p>
-    </div>
-
-    <div class="about-col">
-      <h3>Aim</h3>
-      <p>
-        Our main aim is to have a fully functional site that is user-friendly, visually appealing
-        while fully satisfying the needs of all our stakeholders. The website must also enhance
-        the online presence of the corporation and increase community engagement.
-      </p>
-    </div>
-
-    <div class="about-col">
-      <h3>Services</h3>
-      <p>
-        The purpose of this proposal is to further improve the quality of life of residents and
-        visitors by creating, improving, and maintaining a comprehensive website that will allow
-        seamless access to important information that is continuously changing and efficient
-        request and delivery of critical services that support the smooth functioning of the city.
-        It will provide a needed means of communication between citizens and the organization
-        enabling it to carry out responsibilities more effectively.
-      </p>
-    </div>
+  <div class="about-links">
+      <div class="link-item">
+          <img src="path/to/history-image.jpg" alt="History">
+          <h3>History</h3>
+      </div>
+      <div class="link-item">
+          <img src="path/to/leadership-image.jpg" alt="Leadership Team">
+          <h3>Leadership Team</h3>
+      </div>
   </div>
 </section>
 
@@ -70,7 +60,7 @@
   <p>The Port of Spain City Corporation provides a wide range of services to maintain and enhance the city’s
     infrastructure and environment.</p>
 
-    <div class="row">
+    <div class="services-row">
       <div class="services-col">
         <img src="{{ url_for('static', filename='images/buildings.jpeg') }}" alt="Building Maintenance">
         <div class="title-overlay">
@@ -199,6 +189,8 @@
       </div>
   </div>
   </section>
+
+
 <!-- Departments Section-->
 <section class="departments-section">
   <div class="container">

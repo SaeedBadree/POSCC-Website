@@ -79,6 +79,10 @@
     perspective: 1000px;
 }
 
+.service-card h3{
+    color: #141d28;
+}
+
 .service-card-inner {
     position: relative;
     width: 100%;

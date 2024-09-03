@@ -1,10 +1,19 @@
 .procurement-container {
     padding: 20px;
     text-align: center;
+    background-color: #f3f4f6; /* Adding a background color to make the section stand out */
 }
+
+.procurement-heading {
+    font-size: 2.5em; /* Ensures the heading is prominent */
+    margin-bottom: 20px; /* Adds space between the heading and the iframe */
+    color: #333; /* Text color for the heading */
+}
+
 .download-section {
     margin-top: 20px;
 }
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -16,6 +25,11 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
+
 .btn:hover {
     background-color: #005bb5;
+}
+
+#procurement-title {
+    color:#005bb5
 }

@@ -42,7 +42,7 @@
 <body>
     <nav>
 
-        <a href="{{ url_for('views.home') }}"><img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}"
+        <a href="{{ url_for('views.home') }}"><img src="{{ url_for('static', filename='images/posccLogo.png') }}"
                 id="poscclogo" alt="POSCC Logo"></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
@@ -88,6 +88,7 @@
                             <li><a href="{{ url_for('views.geospatial') }}">Geospatial Mapping Service</a></li>
                             <li><a href="#">Events</a></li>
                             <li><a href="#">FAQs</a></li>
+                       
                         </ul>
                     </div>
                 </li>
@@ -380,6 +381,7 @@
 
     <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
     <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 
