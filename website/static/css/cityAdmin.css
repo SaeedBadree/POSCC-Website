@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #001f3f; /* Navy Blue */
+    --secondary-color: #f0f0f0; /* Light Grey */
+    --accent-color: #0073ff; /* City Accent Blue */
+    --text-color: #333; /* Dark Gray for Text */
+    --background-color: #ffffff; /* White Background */
+    --border-color: #d1d1d1; /* Border color for sections */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* City Admin Header Section */
+.cityAdmin-header {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.cityAdmin-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.cityAdmin-header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* City Admin Content Section */
+.cityAdmin-content {
+    padding: 60px 20px;
+    background-color: var(--secondary-color);
+    text-align: left;
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.cityAdmin-content h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.cityAdmin-content p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+/* Styled Lists */
+.cityAdmin-content ul, .cityAdmin-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.cityAdmin-content ul li, .cityAdmin-info ul li {
+    font-size: 16px;
+    color: var(--text-color);
+    padding-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.cityAdmin-content ul li::before, .cityAdmin-info ul li::before {
+    content: "•"; /* Custom bullet point */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color); /* City Accent Color */
+    font-size: 24px;
+}
+
+/* Departmental Information Section */
+.cityAdmin-info {
+    padding: 60px 20px;
+    background-color: var(--background-color);
+    text-align: left;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.cityAdmin-info h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.cityAdmin-info p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cityAdmin-header h1 {
+        font-size: 36px;
+    }
+
+    .cityAdmin-header p {
+        font-size: 16px;
+    }
+
+    .cityAdmin-content h2, .cityAdmin-info h2 {
+        font-size: 24px;
+    }
+
+    .cityAdmin-content p, .cityAdmin-info p {
+        font-size: 14px;
+    }
+
+    .cityAdmin-content ul li, .cityAdmin-info ul li {
+        font-size: 14px;
+    }
+}

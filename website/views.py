@@ -117,3 +117,12 @@ def chatbot():
         response = "Thank you for your message. We will get back to you shortly."
     
     return jsonify({"response": response})
+
+
+@views.route('/cityAdmin')
+def cityAdmin():
+    return render_template('cityAdmin.html')
+
+@views.route('/cityEngineering')
+def cityEngineering():
+    return render_template('cityEngineering.html')
