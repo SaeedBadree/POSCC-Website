@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cityAdmin.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cityEngineering.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cityPolice.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/publicHealth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/led.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/disasterManagement.css') }}">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,18 +118,18 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#">City Police<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.cityPolice') }}">City Police<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="#">Administrative Department</a></li>
+                                        <li><a href="{{ url_for('views.cityPolice') }}">Administrative Department</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <a href="#">Disaster Management<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.disasterManagement') }}">Disaster Management<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="#">Internal and External Administration</a></li>
+                                        <li><a href="{{ url_for('views.disasterManagement') }}">Internal and External Administration</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -140,18 +144,18 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#">Public Health<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.publicHealth') }}">Public Health<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="#">Public Health Services</a></li>
+                                        <li><a href="{{ url_for('views.publicHealth') }}">Public Health Services</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <a href="#">Local Economic Development<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.led') }}">Local Economic Development<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="#">Economic Development Initiatives</a></li>
+                                        <li><a href="{{ url_for('views.led') }}">Economic Development Initiatives</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -183,7 +187,7 @@
                     <div class="dropdown-menu">
                         <ul>
                             <li>
-                                <a href="#">Contact Information<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.contact') }}">Contact Information<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
                                         <li><a href="#">Phone Numbers</a></li>

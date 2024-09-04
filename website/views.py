@@ -126,3 +126,19 @@ def cityAdmin():
 @views.route('/cityEngineering')
 def cityEngineering():
     return render_template('cityEngineering.html')
+
+@views.route('/cityPolice')
+def cityPolice():
+    return render_template('cityPolice.html')
+
+@views.route('/publicHealth')
+def publicHealth():
+    return render_template('publicHealth.html')
+
+@views.route('/led')
+def led():
+    return render_template('led.html')
+
+@views.route('/disasterManagement')
+def disasterManagement():
+    return render_template('disasterManagement.html')

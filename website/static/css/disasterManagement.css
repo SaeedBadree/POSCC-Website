@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #001f3f; /* Navy Blue */
+    --secondary-color: #f8f8f8; /* Light Gray */
+    --accent-color: #0073ff; /* City Accent Blue */
+    --text-color: #333; /* Dark Gray for Text */
+    --background-color: #ffffff; /* White Background */
+    --border-color: #d1d1d1; /* Border color for sections */
+}
+
+
+
+/* Disaster Management Header Section */
+.disaster-header {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.disaster-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.disaster-header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Disaster Overview Section */
+.disaster-overview, 
+.disaster-roles, 
+.disaster-initiatives, 
+.disaster-contact {
+    padding: 60px 20px;
+    background-color: var(--secondary-color);
+    text-align: left;
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.disaster-overview h2, 
+.disaster-roles h2, 
+.disaster-initiatives h2, 
+.disaster-contact h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.disaster-overview p, 
+.disaster-roles p, 
+.disaster-initiatives p, 
+.disaster-contact p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.disaster-roles ul, 
+.disaster-initiatives ul, 
+.disaster-contact ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.disaster-roles ul li, 
+.disaster-initiatives ul li, 
+.disaster-contact ul li {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    list-style: disc;
+    padding-left: 10px;
+}
+
+/* Hover Effects */
+.disaster-overview:hover, 
+.disaster-roles:hover, 
+.disaster-initiatives:hover, 
+.disaster-contact:hover {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+.disaster-overview:hover h2, 
+.disaster-roles:hover h2, 
+.disaster-initiatives:hover h2, 
+.disaster-contact:hover h2 {
+    color: var(--background-color);
+}
+
+.disaster-roles ul li:hover, 
+.disaster-initiatives ul li:hover, 
+.disaster-contact ul li:hover {
+    color: var(--background-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .disaster-header h1 {
+        font-size: 36px;
+    }
+
+    .disaster-header p {
+        font-size: 16px;
+    }
+
+    .disaster-overview h2, 
+    .disaster-roles h2, 
+    .disaster-initiatives h2, 
+    .disaster-contact h2 {
+        font-size: 28px;
+    }
+
+    .disaster-overview p, 
+    .disaster-roles p, 
+    .disaster-initiatives p, 
+    .disaster-contact p {
+        font-size: 14px;
+    }
+}

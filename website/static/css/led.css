@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #001f3f; /* Navy Blue */
+    --secondary-color: #f8f8f8; /* Light Gray */
+    --accent-color: #0073ff; /* City Accent Blue */
+    --text-color: #333; /* Dark Gray for Text */
+    --background-color: #ffffff; /* White Background */
+    --border-color: #d1d1d1; /* Border color for sections */
+}
+
+
+/* LED Header Section */
+.led-header {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.led-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.led-header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* LED Overview Section */
+.led-overview, 
+.led-initiatives, 
+.led-resources, 
+.led-future-goals {
+    padding: 60px 20px;
+    background-color: var(--secondary-color);
+    text-align: left;
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.led-overview h2, 
+.led-initiatives h2, 
+.led-resources h2, 
+.led-future-goals h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.led-overview p, 
+.led-initiatives p, 
+.led-resources p, 
+.led-future-goals p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.led-initiatives ul, 
+.led-resources ul, 
+.led-future-goals ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.led-initiatives ul li, 
+.led-resources ul li, 
+.led-future-goals ul li {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    list-style: disc;
+    padding-left: 10px;
+}
+
+/* Hover Effects */
+.led-overview:hover, 
+.led-initiatives:hover, 
+.led-resources:hover, 
+.led-future-goals:hover {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+.led-overview:hover h2, 
+.led-initiatives:hover h2, 
+.led-resources:hover h2, 
+.led-future-goals:hover h2 {
+    color: var(--background-color);
+}
+
+.led-initiatives ul li:hover, 
+.led-resources ul li:hover, 
+.led-future-goals ul li:hover {
+    color: var(--background-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .led-header h1 {
+        font-size: 36px;
+    }
+
+    .led-header p {
+        font-size: 16px;
+    }
+
+    .led-overview h2, 
+    .led-initiatives h2, 
+    .led-resources h2, 
+    .led-future-goals h2 {
+        font-size: 28px;
+    }
+
+    .led-overview p, 
+    .led-initiatives p, 
+    .led-resources p, 
+    .led-future-goals p {
+        font-size: 14px;
+    }
+}

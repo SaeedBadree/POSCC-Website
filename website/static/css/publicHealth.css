@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #001f3f; /* Navy Blue */
+    --secondary-color: #f8f8f8; /* Light Gray */
+    --accent-color: #0073ff; /* City Accent Blue */
+    --text-color: #333; /* Dark Gray for Text */
+    --background-color: #ffffff; /* White Background */
+    --border-color: #d1d1d1; /* Border color for sections */
+}
+
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Public Health Header Section */
+.publicHealth-header {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.publicHealth-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.publicHealth-header p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Content Sections (General Styling) */
+.publicHealth-content,
+.publicHealth-info {
+    padding: 60px 20px;
+    background-color: var(--secondary-color);
+    text-align: left;
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.publicHealth-content h2,
+.publicHealth-info h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.publicHealth-content p,
+.publicHealth-info p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.publicHealth-content ul,
+.publicHealth-info ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.publicHealth-content ul li,
+.publicHealth-info ul li {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    list-style: disc;
+    padding-left: 10px;
+}
+
+/* Hover Effects */
+.publicHealth-content:hover,
+.publicHealth-info:hover {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+.publicHealth-content:hover h2,
+.publicHealth-info:hover h2 {
+    color: var(--background-color);
+}
+
+.publicHealth-content ul li:hover,
+.publicHealth-info ul li:hover {
+    color: var(--background-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .publicHealth-header h1 {
+        font-size: 36px;
+    }
+
+    .publicHealth-header p {
+        font-size: 16px;
+    }
+
+    .publicHealth-content h2,
+    .publicHealth-info h2 {
+        font-size: 28px;
+    }
+
+    .publicHealth-content p,
+    .publicHealth-info p {
+        font-size: 14px;
+    }
+}
