@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/publicHealth.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/led.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/disasterManagement.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cityAssessors.css') }}">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,6 +157,14 @@
                                 <div class="dropdown-menu-1">
                                     <ul>
                                         <li><a href="{{ url_for('views.led') }}">Economic Development Initiatives</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('views.cityAssessors') }}">City Assessors<i class="fas fa-caret-right"></i></a>
+                                <div class="dropdown-menu-1">
+                                    <ul>
+                                        <li><a href="{{ url_for('views.cityAssessors') }}">City Assessors</a></li>
                                     </ul>
                                 </div>
                             </li>

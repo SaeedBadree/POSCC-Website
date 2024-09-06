@@ -142,3 +142,7 @@ def led():
 @views.route('/disasterManagement')
 def disasterManagement():
     return render_template('disasterManagement.html')
+
+@views.route('/cityAssessors')
+def cityAssessors():
+    return render_template('cityAssessors.html')

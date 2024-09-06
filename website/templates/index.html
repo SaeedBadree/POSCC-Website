@@ -299,15 +299,17 @@
   </div>
 </section>
 
-
-
 <!-- Information Section -->
+
 <section class="info-section">
+  <div class="info-header">
+    <h1>Stay Informed</h1>
+    <p>Explore the latest news, events, and frequently asked questions to stay updated with the activities and happenings within the Port of Spain City Corporation.</p>
+  </div>
+  
   <div class="info-container">
-    <div class="info-card">
-      <div class="info-icon">
-        <img src="news-icon.png" alt="News Announcements">
-      </div>
+    <div class="info-item">
+      <img src="{{ url_for('static', filename='images/news_and_announcements.jpeg') }}" alt="News Announcements">
       <h2>News/Announcements</h2>
       <p>Keep updated and informed of what is happening within your regional corporation.</p>
       <a href="#" class="info-btn">
@@ -315,10 +317,8 @@
       </a>
     </div>
 
-    <div class="info-card">
-      <div class="info-icon">
-        <img src="events-icon.png" alt="Events">
-      </div>
+    <div class="info-item">
+      <img src="{{ url_for('static', filename='images/events.jpeg') }}" alt="Events">
       <h2>Events</h2>
       <p>Events are a powerful way to bring people together, create memorable experiences, and achieve specific goals.</p>
       <a href="#" class="info-btn">
@@ -326,10 +326,8 @@
       </a>
     </div>
 
-    <div class="info-card">
-      <div class="info-icon">
-        <img src="faqs-icon.png" alt="FAQs">
-      </div>
+    <div class="info-item">
+      <img src="{{ url_for('static', filename='images/FAQs.jpeg') }}" alt="FAQs">
       <h2>FAQs</h2>
       <p>Questions can unlock knowledge and provide tips to help you frame inquiries that lead to insightful answers.</p>
       <a href="#" class="info-btn">
@@ -339,28 +337,27 @@
   </div>
 </section>
 
-
-
-
 <!-- Call To Action Section -->
 <section class="cta">
   <h1>Get In Touch With the Port of Spain City Corporation Now</h1>
-  <a href="" class="hero-btn">CONTACT US</a>
+  <a href="" class="cta-btn">CONTACT US</a>
 </section>
+
+<!-- Council Section-->
 
 <section class="council-section">
   <div class="council-header">
     <h1>Meet The Council</h1>
-    <p>Introducing the TPRC Council, a dedicated assembly focused on fostering collaboration, innovation, and sustainable growth across our diverse communities.</p>
+    <p>Introducing the POSCC Council, a dedicated assembly focused on fostering collaboration, innovation, and sustainable growth across our diverse communities.</p>
     <a href="#" class="read-more-btn">Read more</a>
   </div>
   
   <div class="council-members">
     <div class="council-member">
-      <img src="josiah-austin.jpg" alt="Josiah Austin" class="member-photo">
-      <h2>Josiah Austin</h2>
-      <p class="member-title">Chairman</p>
-      <p class="member-description">A chairman for a council serves as the presiding officer responsible for leading meetings, facilitating discussions, and ensuring effective decision-making within the council.</p>
+      <img src="{{ url_for('static', filename='images/mayor.jpeg') }}" alt="Chinua Allayne" class="member-photo">
+      <h2>Chinua Allayne</h2>
+      <p class="member-title">Mayor</p>
+      <p class="member-description">He has assured the public he will make them proud and added that young people can successfully lead TT.</p>
       <div class="social-links">
         <a href="#" class="social-icon">Facebook Icon</a>
         <!-- Add other social icons here -->
@@ -368,9 +365,9 @@
     </div>
 
     <div class="council-member">
-      <img src="clayton-blackman.jpg" alt="Clayton Blackman" class="member-photo">
-      <h2>Clayton Blackman</h2>
-      <p class="member-title">Vice Chairman</p>
+      <img src="{{ url_for('static', filename='images/deputy-mayor.jpeg') }}" alt="Abena Hartley" class="member-photo">
+      <h2>Abena Hartley</h2>
+      <p class="member-title">Deputy Mayor</p>
       <p class="member-description">The vice-chairman of a council serves as the deputy to the chairman, supporting in leadership responsibilities and presiding over meetings in the absence of the chairman.</p>
       <div class="social-links">
         <a href="#" class="social-icon">Facebook Icon</a>

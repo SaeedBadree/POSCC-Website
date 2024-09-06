@@ -1,136 +1,154 @@
-:root {
-    --primary-color: #001f3f; /* Navy Blue */
-    --secondary-color: #f0f0f0; /* Light Grey */
-    --accent-color: #0073ff; /* City Accent Blue */
-    --text-color: #333; /* Dark Gray for Text */
-    --background-color: #ffffff; /* White Background */
-    --border-color: #d1d1d1; /* Border color for sections */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    line-height: 1.6;
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-/* City Admin Header Section */
+/* General Styles */
 .cityAdmin-header {
-    background: var(--primary-color);
-    color: var(--background-color);
-    text-align: center;
+    background-color: #044372; /* Navy Blue Background */
+    color: #ffffff; /* White text for better contrast */
     padding: 100px 20px;
+    text-align: center;
 }
 
-.cityAdmin-header h1 {
+.cityAdmin-header-content h1 {
     font-size: 48px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff; /* Ensure the heading text remains white */
 }
 
-.cityAdmin-header p {
+.cityAdmin-header-content p {
     font-size: 18px;
-    margin-bottom: 40px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #ffffff; /* Ensure the paragraph text remains white */
 }
 
 /* City Admin Content Section */
-.cityAdmin-content {
-    padding: 60px 20px;
-    background-color: var(--secondary-color);
-    text-align: left;
-    border-top: 3px solid var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-    margin-bottom: 50px;
-}
-
-.cityAdmin-content h2 {
-    font-size: 32px;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.cityAdmin-content p {
-    font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 25px;
-}
-
-/* Styled Lists */
-.cityAdmin-content ul, .cityAdmin-info ul {
-    list-style: none;
-    padding-left: 0;
+.cityAdmin-content, .cityAdmin-info {
+    padding: 50px 20px;
+    background-color: #e8e9eb; /* Light gray background for better contrast with dark text */
+    color: #333333; /* Dark text for readability */
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+}
+
+.cityAdmin-content h2, .cityAdmin-info h2 {
+    font-size: 32px;
+    color: #044372; /* Navy blue headings */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #044372;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.cityAdmin-content p, .cityAdmin-info p, .cityAdmin-rates p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #333333; /* Dark text for readability */
+}
+
+.cityAdmin-content ul, .cityAdmin-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .cityAdmin-content ul li, .cityAdmin-info ul li {
     font-size: 16px;
-    color: var(--text-color);
-    padding-left: 30px;
     margin-bottom: 10px;
-    position: relative;
+    color: #333333; /* Dark text for readability */
 }
 
-.cityAdmin-content ul li::before, .cityAdmin-info ul li::before {
-    content: "•"; /* Custom bullet point */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--accent-color); /* City Accent Color */
-    font-size: 24px;
+/* City Admin Rates Section */
+.cityAdmin-rates {
+    padding: 50px 20px;
+    background-color: #ffffff; /* White background for clarity */
+    color: #333333; /* Dark text for readability */
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Departmental Information Section */
-.cityAdmin-info {
-    padding: 60px 20px;
-    background-color: var(--background-color);
-    text-align: left;
-    border-top: 2px solid var(--border-color);
-    border-bottom: 2px solid var(--border-color);
-}
-
-.cityAdmin-info h2 {
+.cityAdmin-rates h2, .cityAdmin-rates h3 {
     font-size: 32px;
-    color: var(--primary-color);
+    color: #044372; /* Navy blue headings */
     margin-bottom: 20px;
 }
 
-.cityAdmin-info p {
-    font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 25px;
+.cityAdmin-rates table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
+.cityAdmin-rates table th, .cityAdmin-rates table td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    color: #333333; /* Dark text for readability */
+}
+
+.cityAdmin-rates table th {
+    background-color: #044372; /* Navy blue background for table headers */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+}
+
+.cityAdmin-rates table td {
+    background-color: #f8f8f8; /* Light background for table cells */
+}
+
+.cityAdmin-rates ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.cityAdmin-rates ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333333; /* Dark text for readability */
+}
+
+/* Additional styling for emphasis */
+.cityAdmin-rates h3 {
+    font-size: 28px;
+    color: #044372;
+    margin-top: 40px;
+}
+
+/* Styling for important notices or emphasis */
+.cityAdmin-rates p.notice {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .cityAdmin-header h1 {
+    .cityAdmin-header-content h1 {
         font-size: 36px;
     }
 
-    .cityAdmin-header p {
+    .cityAdmin-header-content p {
         font-size: 16px;
     }
 
-    .cityAdmin-content h2, .cityAdmin-info h2 {
-        font-size: 24px;
+    .cityAdmin-content, .cityAdmin-info, .cityAdmin-rates {
+        padding: 30px 15px;
     }
 
-    .cityAdmin-content p, .cityAdmin-info p {
-        font-size: 14px;
+    .cityAdmin-content h2, .cityAdmin-info h2, .cityAdmin-rates h2 {
+        font-size: 28px;
     }
 
-    .cityAdmin-content ul li, .cityAdmin-info ul li {
+    .cityAdmin-rates table th, .cityAdmin-rates table td {
         font-size: 14px;
     }
 }
