@@ -2,7 +2,7 @@
 .contact-section {
     font-family: 'Poppins', sans-serif;
     background-color: #f3f4f6;
-    color: #333;
+    color: #333; /* Ensure dark text for readability */
 }
 
 .contact-header {
@@ -40,16 +40,18 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #004d26;
-    color: #ffffff;
+    background-color: #003366; /* Changed to deep blue */
+    color: #ffffff; /* Ensure white text on dark background */
 }
 
 .hours, .contact-info {
     width: 25%;
+    color: #ffffff; /* Ensure text remains white for visibility */
 }
 
 .map-container {
     width: 50%;
+    padding-right: 20px; /* Added padding to the right of the map */
 }
 
 .map-container #map {
@@ -64,6 +66,7 @@
     font-size: 20px;
 }
 
+/* Directory Section */
 .directory-section {
     padding: 50px 20px;
     background-color: #ffffff;
@@ -71,7 +74,7 @@
 
 .directory-section h2 {
     font-size: 2em;
-    color: #004d26;
+    color: #003366; /* Changed to deep blue */
     margin-bottom: 30px;
 }
 
@@ -82,7 +85,7 @@
 }
 
 .directory-item h3 {
-    color: #004d26;
+    color: #003366; /* Changed to deep blue */
     margin-bottom: 15px;
 }
 
@@ -93,6 +96,7 @@
 
 .directory-item ul li {
     padding: 5px 0;
+    color: #333; /* Ensure dark text for readability */
 }
 
 /* Responsive Design */
@@ -104,6 +108,7 @@
 
     .hours, .contact-info, .map-container {
         width: 100%;
+        padding-right: 0; /* Remove padding for small screens */
     }
 
     .directory-grid {

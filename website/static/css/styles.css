@@ -375,7 +375,7 @@ nav .fa {
 
 /* Departments Section */
 .departments-section {
-  background-color: #243442; /* Darker blue-green background */
+  background: linear-gradient(to bottom right, #0b2640, #02111b); /* Cooler blue gradient */
   padding: 50px 0;
   text-align: center;
 }
@@ -486,10 +486,10 @@ nav .fa {
   }
 }
 
-/* Info Section */
 
+/* Info Section */
 .info-section {
-  background-color: #323c46; /* Darker gray background */
+  background-color: var(--color-background); /* Use site-wide background color */
   padding: 50px 0;
   text-align: center;
 }
@@ -500,66 +500,69 @@ nav .fa {
 
 .info-header h1 {
   font-size: 36px;
-  color: #ffffff;
+  color: var(--color-black); /* Use site-wide primary black */
   margin-bottom: 10px;
 }
 
 .info-header p {
   font-size: 18px;
-  color: #c5c5c5;
+  color: var(--color-dark-gray); /* Ensure consistency with site-wide dark-gray */
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* Info Container and Items */
 .info-container {
   display: flex;
-  justify-content: space-around; /* Space the items evenly */
-  align-items: center; /* Vertically align the sections */
-  flex-direction: row; /* Stack the sections horizontally */
-  gap: 30px;
+  justify-content: space-between; /* Adjusted spacing for more even distribution */
+  align-items: flex-start; /* Align items to the top */
+  flex-direction: row; /* Maintain horizontal layout */
+  gap: 20px; /* Slightly reduce the gap for better fit */
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
 
 .info-item {
-  background-color: transparent; /* Remove the card background */
-  color: #ffffff; /* Ensure text is white for contrast */
-  padding: 20px; /* Add padding for spacing */
-  text-align: center; /* Center-align text */
-  width: 30%; /* Set width of each section to fit within the row */
+  background-color: #fff; /* Add card background for better separation */
+  color: var(--color-dark-gray); /* Consistent dark gray text */
+  padding: 30px; /* Increased padding for better spacing */
+  text-align: center;
+  width: 30%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Slightly rounded corners for a modern look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
-.info-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -15px;
-  height: 100%;
-  width: 1px;
-  background-color: #ffffff; /* White vertical line */
+.info-item:hover {
+  transform: translateY(-10px); /* Lift on hover for interaction */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .info-item img {
-  width: 100px; /* Reduce the image size */
+  width: 80px; /* Maintain a smaller consistent image size */
   margin-bottom: 15px;
+  border-radius: 50%; /* Make images round for a cleaner look */
+  border: 2px solid var(--color-light-gray); /* Add a border around images */
 }
 
 .info-item h2 {
   font-size: 24px;
   margin-bottom: 15px;
+  color: var(--color-black); /* Use black for headings */
 }
 
 .info-item p {
   font-size: 16px;
   margin-bottom: 20px;
+  color: var(--color-dark-gray); /* Ensure text color consistency */
 }
 
 .info-btn {
   display: inline-block;
-  background-color: #140587; /* Navy blue button */
-  color: #ffffff; /* White text */
+  background-color: var(--color-primary); /* Use primary site color for the button */
+  color: var(--color-white); /* White text for better contrast */
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
@@ -568,23 +571,19 @@ nav .fa {
 }
 
 .info-btn:hover {
-  background-color: #003ce0;
-  color: #fff;
+  background-color: var(--color-accent); /* Use accent color on hover */
+  color: var(--color-white); /* Ensure white text on hover */
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
   .info-container {
-    flex-direction: column; /* Stack vertically on smaller screens */
+      flex-direction: column; /* Stack vertically on smaller screens */
   }
 
   .info-item {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .info-item::after {
-    display: none; /* Hide the vertical lines on smaller screens */
+      width: 100%;
+      margin-bottom: 20px;
   }
 }
 
