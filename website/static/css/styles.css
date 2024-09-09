@@ -373,86 +373,98 @@ nav .fa {
   }
 }
 
-/* Departments Section */
+
+/* departments section */ 
+
 .departments-section {
-  background: linear-gradient(to bottom right, #0b2640, #02111b); /* Cooler blue gradient */
+  background: var(--primary-color); /* Use primary color from the site */
   padding: 50px 0;
   text-align: center;
 }
 
 .departments-section h1 {
-  color: #ffffff;
+  color: var(--background-color); /* White or light color for contrast */
   font-size: 36px;
   margin-bottom: 50px;
+  letter-spacing: 1px; /* Small letter-spacing for a more refined look */
 }
 
 .departments-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px; /* Increased gap for a cleaner look */
 }
 
 .department-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* White background for the cards */
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
   text-align: left;
-  width: calc(33.333% - 20px);
-  padding: 60px 20px 20px;
-  transition: transform 0.3s;
+  width: calc(33.333% - 30px); /* Adjusted width for larger gap */
+  padding: 60px 20px 20px; /* Increased padding to fit icons */
+  transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
+  overflow: visible; /* Allows the icon to extend outside of the card */
 }
 
 .department-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
 }
 
 .icon-link {
   position: absolute;
-  top: -40px;
+  top: -40px; /* Adjusted position to extend icon out of the card */
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-primary);
+  background-color: var(--accent-color); /* Accent color for icons */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 50%; /* Rounded icon background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 2; /* Ensure the icon appears above the card */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+.icon-link:hover {
+  background-color: var(--primary-color); /* Primary color on hover */
 }
 
 .department-icon {
-  color: #ffffff;
-  font-size: 36px;
+  color: #ffffff; /* White icon color for contrast */
+  font-size: 36px; /* Large icon size */
 }
 
 .department-content h2 {
-  color: var(--color-black);
-  font-size: 24px;
-  margin-bottom: 10px;
+  color: var(--text-color); /* Dark text color for readability */
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
 .department-content p {
-  color: var(--color-dark-gray);
+  color: var(--text-color); /* Dark gray for body text */
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .learn-more {
   display: inline-block;
-  background-color: var(--color-accent);
-  color: var(--color-black);
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-color: var(--secondary-color); /* Light secondary color */
+  color: var(--primary-color); /* Use primary color for text */
+  padding: 10px 25px;
+  border-radius: 30px; /* Fully rounded button */
   font-weight: bold;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
   text-decoration: none;
 }
 
 .learn-more:hover {
-  background-color: #e55c50;
+  background-color: var(--primary-color); /* Button background on hover */
+  color: #ffffff; /* White text on hover */
 }
 
 /* Responsive Design */
@@ -640,18 +652,25 @@ nav .fa {
 
 /* council section */
  
+:root {
+  --primary-color: #003366; /* Dark navy blue from the logo */
+  --accent-color-yellow: #fdd835; /* Yellow from the logo */
+  --accent-color-red: #ff0000; /* Red from the logo */
+  --text-color: #ffffff; /* White for text */
+  --light-gray: #e9e9e9; /* Light gray for backgrounds */
+}
+
 .council-section {
-  background-color: #003366; /* Dark navy blue background */
+  background-color: var(--primary-color); /* Navy blue background */
   padding: 60px 20px;
   text-align: center;
   position: relative;
-  background-image: url('background-pattern.png');
   background-size: cover;
 }
 
 .council-header h1 {
   font-size: 48px;
-  color: #ffffff; /* White text for better contrast */
+  color: var(--text-color); /* White text for better contrast */
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
@@ -664,8 +683,8 @@ nav .fa {
 
 .read-more-btn {
   display: inline-block;
-  background-color: #ffffff; /* White button */
-  color: #003366; /* Dark navy blue text */
+  background-color: var(--accent-color-yellow); /* Yellow button from the logo */
+  color: var(--primary-color); /* Dark navy blue text */
   padding: 10px 30px;
   border-radius: 5px;
   text-decoration: none;
@@ -674,8 +693,8 @@ nav .fa {
 }
 
 .read-more-btn:hover {
-  background-color: #cccccc; /* Lighter grey on hover */
-  color: #003366;
+  background-color: var(--accent-color-red); /* Red on hover */
+  color: var(--text-color); /* White text on hover */
 }
 
 .council-members {
@@ -686,7 +705,7 @@ nav .fa {
 }
 
 .council-member {
-  background-color: #e9e9e9; /* Light grey background */
+  background-color: var(--light-gray); /* Light gray background for members */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
@@ -706,18 +725,18 @@ nav .fa {
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 4px solid #003366; /* Navy blue border around the photo */
+  border: 4px solid var(--accent-color-red); /* Red border around the photo */
 }
 
 .council-member h2 {
   font-size: 24px;
-  color: #003366; /* Navy blue text */
+  color: var(--primary-color); /* Navy blue text */
   margin-bottom: 10px;
 }
 
 .member-title {
   font-size: 20px;
-  color: #555555; /* Medium grey for title */
+  color: var(--accent-color-yellow); /* Yellow for titles */
   margin-bottom: 20px;
 }
 
@@ -736,12 +755,12 @@ nav .fa {
 .social-icon {
   display: inline-block;
   font-size: 20px;
-  color: #003366; /* Navy blue icons */
+  color: var(--primary-color); /* Navy blue icons */
   transition: color 0.3s;
 }
 
 .social-icon:hover {
-  color: #ffffff; /* White on hover */
+  color: var(--accent-color-yellow); /* Yellow on hover */
 }
 
 /* Responsive Design */
@@ -756,6 +775,7 @@ nav .fa {
     margin-bottom: 40px;
   }
 }
+
 
 /* Footer Section */
 
