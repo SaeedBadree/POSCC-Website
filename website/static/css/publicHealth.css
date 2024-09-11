@@ -1,15 +1,18 @@
 :root {
-    --primary-color: #002855; /* Darker Navy Blue (to replace #001f3f) */
+    --primary-color: #002855; /* Darker Navy Blue */
     --secondary-color: #f8f8f8; /* Light Gray */
-    --accent-color: #ffc107; /* Soft Yellow (toned down for better readability) */
+    --accent-color: #ffc107; /* Soft Yellow */
     --text-color: #333; /* Dark Gray for Text */
     --background-color: #ffffff; /* White Background */
     --border-color: #d1d1d1; /* Border color for sections */
+    --red-accent: #d9534f; /* Subtle Red Accent */
+    --purple-accent: #6f42c1; /* Subtle Purple Accent */
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Public Health Header Section */
@@ -24,6 +27,7 @@ body {
     font-size: 48px;
     margin-bottom: 15px;
     text-transform: uppercase;
+    color: var(--accent-color); /* Soft yellow for main header */
 }
 
 .publicHealth-header p {
@@ -50,6 +54,8 @@ body {
     font-size: 32px;
     color: var(--primary-color);
     margin-bottom: 20px;
+    border-bottom: 2px solid var(--purple-accent); /* Subtle purple underline for headings */
+    padding-bottom: 5px;
 }
 
 .publicHealth-content p,
@@ -89,6 +95,7 @@ body {
     color: var(--primary-color);
     margin-bottom: 40px;
     text-align: center;
+    border-bottom: 3px solid var(--red-accent); /* Subtle red accent under service section header */
 }
 
 /* Collapsible Button */
@@ -103,7 +110,7 @@ body {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .collapsible:hover {
@@ -145,12 +152,33 @@ body {
 }
 
 .content ul li a:hover {
-    color: var(--accent-color); /* Soft yellow for link hover */
+    color: var(--red-accent); /* Subtle red for link hover */
 }
 
 .content p {
     font-size: 16px;
     color: var(--text-color);
+}
+
+/* Modal Button Styling */
+.open-modal {
+    display: inline-block;
+    background-color: var(--accent-color); /* Soft yellow for button */
+    color: var(--primary-color); /* Navy blue text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.open-modal:hover {
+    background-color: var(--primary-color); /* Navy blue on hover */
+    color: var(--background-color); /* White text on hover */
 }
 
 /* Modal Styles */
