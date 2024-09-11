@@ -150,3 +150,7 @@ def cityAssessors():
 @views.route('/market')
 def market():
     return render_template('market.html')
+
+@views.route('/maintenance')
+def maintenance():
+    return render_template('maintenance.html')

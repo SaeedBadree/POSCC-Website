@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/disasterManagement.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cityAssessors.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/market.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/maintenance.css') }}">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +72,7 @@
                     <div class="dropdown-menu">
                         <ul>
                             <li>
-                                <a href="#">Maintenance<i class="fas fa-caret-right"></i></a>
+                                <a href="{{ url_for('views.maintenance') }}">Maintenance<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
                                         <li><a href="#">Road Repair Services</a></li>
