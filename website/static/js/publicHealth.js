@@ -12,3 +12,33 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+
+ // Function to toggle modals
+ document.addEventListener("DOMContentLoaded", function() {
+    var modals = document.querySelectorAll(".modal");
+    var modalButtons = document.querySelectorAll(".open-modal");
+    var closeButtons = document.querySelectorAll(".close");
+
+    modalButtons.forEach(function(btn) {
+        btn.onclick = function() {
+            var targetModal = document.getElementById(this.getAttribute('data-modal'));
+            targetModal.style.display = "block";
+        };
+    });
+
+    closeButtons.forEach(function(closeBtn) {
+        closeBtn.onclick = function() {
+            this.closest(".modal").style.display = "none";
+        };
+    });
+
+    window.onclick = function(event) {
+        modals.forEach(function(modal) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    };
+});

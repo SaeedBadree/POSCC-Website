@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/led.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/disasterManagement.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cityAssessors.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/market.css') }}">
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,15 +84,15 @@
                                 <a href="#">Public Health<i class="fas fa-caret-right"></i></a>
                                 <div class="dropdown-menu-1">
                                     <ul>
-                                        <li><a href="#">Public Complaints</a></li>
-                                        <li><a href="#">Food Badge Application</a></li>
-                                        <li><a href="#">Water Truck Services</a></li>
-                                        <li><a href="#">Cesspool Cleaning</a></li>
+                                        <li><a href="{{ url_for('views.publicHealth') }}#ph-services">Public Complaints</a></li>
+                                        <li><a href="{{ url_for('views.publicHealth') }}#ph-services">Food Badge Application</a></li>
+                                        <li><a href="{{ url_for('views.publicHealth') }}#ph-services">Water Truck Services</a></li>
+                                        <li><a href="{{ url_for('views.publicHealth') }}#ph-services">Cesspool Cleaning</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li><a href="#">News/Announcements</a></li>
-                            <li><a href="#">Market</a></li>
+                            <li><a href="{{ url_for('views.market') }}">Market</a></li>
                             <li><a href="{{ url_for('views.geospatial') }}">Geospatial Mapping Service</a></li>
                             <li><a href="#">Events</a></li>
                             <li><a href="#">FAQs</a></li>

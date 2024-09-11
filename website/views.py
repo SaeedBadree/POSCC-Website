@@ -146,3 +146,7 @@ def disasterManagement():
 @views.route('/cityAssessors')
 def cityAssessors():
     return render_template('cityAssessors.html')
+
+@views.route('/market')
+def market():
+    return render_template('market.html')
