@@ -1,4 +1,20 @@
+:root {
+    --color-primary: #001f3f; /* Navy Blue */
+    --color-secondary: #f8f8f8; /* Light Gray */
+    --color-accent: #0073ff; /* City Accent Blue */
+    --color-text-dark: #333; /* Dark Gray for Text */
+    --color-background: #ffffff; /* White Background */
+    --color-border: #d1d1d1; /* Border color for sections */
+    --color-white: #ffffff;
+    --color-dark-gray: #333;
+    --color-light-gray: #777;
+    --color-black: #000;
+}
 
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
 
 /* About Header Section */
 .aboutPage-header {
@@ -58,8 +74,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-top: -50px; /* Overlapping effect */
-    
-    
 }
 
 .aboutPage-content h2 {
@@ -68,8 +82,8 @@
     margin-bottom: 20px;
     position: relative;
     letter-spacing: 2px;
-    opacity: 0; }
-   
+    opacity: 0;
+}
 
 .aboutPage-content p {
     font-size: 16px;
@@ -80,6 +94,12 @@
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Targeting for Smooth Scrolling */
+:target {
+    padding-top: 100px; /* Adjust based on your sticky header height */
+    margin-top: -100px;
 }
 
 /* Active class for animation */

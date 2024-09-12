@@ -44,13 +44,13 @@
 
   <div class="about-links">
       <div class="link-item">
-        <a href="{{ url_for('views.about') }}">
+        <a href="{{ url_for('views.about') }}#vision">
           <img src="{{ url_for('static', filename='images/vision.jpeg') }}" alt="History">
       </a>
           <h3>Vision</h3>
       </div>
       <div class="link-item">
-        <a href="{{ url_for('views.about') }}">
+        <a href="{{ url_for('views.about') }}#mission">
           <img src="{{ url_for('static', filename='images/mission.jpeg') }}" alt="History">
       </a>
           <h3>Mission</h3>
@@ -373,11 +373,7 @@
   </div>
 </section>
 
-<!-- Call To Action Section -->
-<section class="cta">
-  <h1>Get In Touch With the Port of Spain City Corporation Now</h1>
-  <a href="" class="cta-btn">CONTACT US</a>
-</section>
+
 
 
 {% endblock %}

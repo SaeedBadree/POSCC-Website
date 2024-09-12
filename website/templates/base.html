@@ -61,9 +61,9 @@
                     <a href="{{ url_for('views.about') }}">About Us<i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-menu">
                         <ul>
-                            <li><a href="#">Establishment</a></li>
-                            <li><a href="#">Boundaries</a></li>
-                            <li><a href="#">Vision and Mission</a></li>
+                            <li><a href="{{ url_for('views.about') }}#about-establishment">Our History</a></li>
+                            <li><a href="{{ url_for('views.about') }}#vision">Vision and Mission</a></li>
+                            <li><a href="{{ url_for('views.about') }}#boundaries">Boundaries/Spatial Content</a></li>
                         </ul>
                     </div>
                 </li>
@@ -400,6 +400,7 @@
     <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/publicHealth.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
 
 </body>
 

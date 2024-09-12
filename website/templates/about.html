@@ -5,7 +5,7 @@
 {% block content %}
     <!-- About Header Section -->
     <section class="aboutPage-header">
-        <div class="aboutPage-header-content">
+        <div class="aboutPage-header-content" id="about-establishment">
             <h1>Our History</h1>
             <p>The Port of Spain Corporation (POSC) is the municipal authority of Port of Spain
                 proclaimed by the then Governor on June 25, 1914, established by the Legislative
@@ -20,7 +20,7 @@
 
     <!-- About Content Section -->
     <section class="aboutPage-content">
-        <h2>Vision</h2>
+        <h2 id="vision">Vision</h2>
         <p>We are the model of excellence in Local Government dedicated to
             sustainable development. <br>
             We are innovative and proactive in meeting the needs of our stakeholders
@@ -30,15 +30,16 @@
             transparent and financially autonomous with competent leadership and
             highly motivated employees in a comfortable, safe and healthy
             environment. </p>
-        <h2>Mission</h2>
+
+        <h2 id="mission">Mission</h2>
         <p>To pursue the continual development of the infrastructure, social, economic
             and environmental conditions through the combined energies of our highly
             motivated Council and workforce in collaboration with Central Government,
-            the business sector, non-government or, that places the highest priority on
-            enriching the lives of all citizens and visitors within the capital city of Port of
-            Spain.</p>
+            the business sector, non-governmental organizations, and other stakeholders 
+            that place the highest priority on enriching the lives of all citizens and visitors 
+            within the capital city of Port of Spain.</p>
 
-        <h2>Spatial Content</h2>
+        <h2 id="boundaries">Spatial Content</h2>
         <p>Port of Spain Corporation is the capital city of the twin island Republic of Trinidad and
             Tobago. It is situated along the East – West corridor, which extends from Carenage in
             the West to Arima in the East.
@@ -52,40 +53,7 @@
         <p>The Port of Spain Corporation comprises two functional arms, the Council or Political
             Arm and the Administration.<br>
             The Council or Political Arm is the executive or decision-making body (Section 10 of the
-            MCA) and comprises of sixteen (16) persons: the Mayor, four (4) </p>
-
+            MCA) and comprises of sixteen (16) persons: the Mayor, four (4) Aldermen, and Councillors.</p>
     </section>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    // Function to check if an element is in the viewport
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    // Function to handle the scroll event and apply the 'in-view' class
-    function handleScroll() {
-        const elements = document.querySelectorAll('.aboutPage-header h1, .aboutPage-header p, .aboutPage-content h2, .aboutPage-content p');
-        elements.forEach((element) => {
-            if (isInViewport(element)) {
-                element.classList.add('in-view');
-            }
-        });
-    }
-
-    // Apply the 'in-view' class to elements already in the viewport on page load
-    handleScroll();
-
-    // Listen for scroll events and apply the 'in-view' class when elements enter the viewport
-    window.addEventListener('scroll', handleScroll);
-});
-
-    </script>
 {% endblock %}

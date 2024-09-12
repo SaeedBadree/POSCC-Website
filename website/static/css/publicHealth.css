@@ -23,14 +23,14 @@ body {
     padding: 100px 20px;
 }
 
-.publicHealth-header h1 {
+.publicHealth-header-content h1 {
     font-size: 48px;
     margin-bottom: 15px;
     text-transform: uppercase;
-    color: var(--accent-color); /* Soft yellow for main header */
+    color: var(--purple-accent); /* Use purple accent for heading */
 }
 
-.publicHealth-header p {
+.publicHealth-header-content p {
     font-size: 18px;
     margin-bottom: 40px;
     max-width: 900px;
@@ -54,7 +54,7 @@ body {
     font-size: 32px;
     color: var(--primary-color);
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--purple-accent); /* Subtle purple underline for headings */
+    border-bottom: 2px solid var(--purple-accent); /* Subtle purple underline */
     padding-bottom: 5px;
 }
 
@@ -95,13 +95,13 @@ body {
     color: var(--primary-color);
     margin-bottom: 40px;
     text-align: center;
-    border-bottom: 3px solid var(--red-accent); /* Subtle red accent under service section header */
+    border-bottom: 3px solid var(--red-accent); /* Subtle red accent under section header */
 }
 
 /* Collapsible Button */
 .collapsible {
-    background-color: var(--accent-color); /* Softer yellow */
-    color: var(--primary-color); /* Dark navy text for contrast */
+    background-color: var(--accent-color); /* Soft yellow */
+    color: var(--primary-color); /* Dark navy text */
     cursor: pointer;
     padding: 15px;
     font-size: 18px;
@@ -114,7 +114,7 @@ body {
 }
 
 .collapsible:hover {
-    background-color: var(--primary-color); /* Dark blue on hover */
+    background-color: var(--primary-color); /* Dark navy on hover */
     color: var(--background-color); /* White text on hover */
 }
 

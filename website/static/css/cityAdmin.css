@@ -1,15 +1,34 @@
-/* General Styles */
+:root {
+    --primary-color: #001f3f; /* Navy Blue */
+    --secondary-color: #f8f8f8; /* Light Gray */
+    --accent-color: #0073ff; /* City Accent Blue */
+    --highlight-purple: #800080; /* Purple for subtle highlights */
+    --highlight-red: #d9534f; /* Red for minimal accents */
+    --highlight-green: #28a745; /* Green for minimal accents */
+    --highlight-yellow: #ffc107; /* Yellow for minimal accents */
+    --text-color: #333; /* Dark Gray for Text */
+    --text-color-dark: #000; /* Darker text for emphasis */
+    --background-color: #ffffff; /* White Background */
+    --border-color: #d1d1d1; /* Border color for sections */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* City Admin Header Section */
 .cityAdmin-header {
-    background-color: #044372; /* Navy Blue Background */
-    color: #ffffff; /* White text for better contrast */
-    padding: 100px 20px;
+    background: var(--primary-color);
+    color: var(--background-color);
     text-align: center;
+    padding: 100px 20px;
 }
 
 .cityAdmin-header-content h1 {
     font-size: 48px;
     font-weight: bold;
-    color: #ffffff; /* Ensure the heading text remains white */
+    color: var(--background-color);
 }
 
 .cityAdmin-header-content p {
@@ -17,14 +36,14 @@
     line-height: 1.5;
     max-width: 800px;
     margin: 20px auto;
-    color: #ffffff; /* Ensure the paragraph text remains white */
+    color: var(--background-color);
 }
 
 /* City Admin Content Section */
 .cityAdmin-content, .cityAdmin-info {
     padding: 50px 20px;
-    background-color: #e8e9eb; /* Light gray background for better contrast with dark text */
-    color: #333333; /* Dark text for readability */
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
@@ -34,9 +53,9 @@
 
 .cityAdmin-content h2, .cityAdmin-info h2 {
     font-size: 32px;
-    color: #044372; /* Navy blue headings */
+    color: var(--primary-color);
     margin-bottom: 20px;
-    border-bottom: 2px solid #044372;
+    border-bottom: 2px solid var(--primary-color);
     display: inline-block;
     padding-bottom: 10px;
 }
@@ -45,7 +64,7 @@
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 20px;
-    color: #333333; /* Dark text for readability */
+    color: var(--text-color);
 }
 
 .cityAdmin-content ul, .cityAdmin-info ul {
@@ -56,14 +75,14 @@
 .cityAdmin-content ul li, .cityAdmin-info ul li {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #333333; /* Dark text for readability */
+    color: var(--text-color-dark);
 }
 
 /* City Admin Rates Section */
 .cityAdmin-rates {
     padding: 50px 20px;
-    background-color: #ffffff; /* White background for clarity */
-    color: #333333; /* Dark text for readability */
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 10px;
@@ -72,7 +91,7 @@
 
 .cityAdmin-rates h2, .cityAdmin-rates h3 {
     font-size: 32px;
-    color: #044372; /* Navy blue headings */
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -87,17 +106,24 @@
     text-align: center;
     padding: 10px;
     font-size: 16px;
-    color: #333333; /* Dark text for readability */
+    color: var(--text-color-dark);
 }
 
 .cityAdmin-rates table th {
-    background-color: #044372; /* Navy blue background for table headers */
-    color: #ffffff; /* White text for contrast */
+    background-color: var(--primary-color);
+    color: var(--background-color);
     font-weight: bold;
 }
 
 .cityAdmin-rates table td {
-    background-color: #f8f8f8; /* Light background for table cells */
+    background-color: var(--secondary-color);
+}
+
+/* Fix for hidden text */
+.cityAdmin-rates table td strong {
+    color: var(--text-color-dark); /* Ensure dark color for strong text */
+    font-weight: bold;
+    opacity: 1; /* Remove any opacity */
 }
 
 .cityAdmin-rates ul {
@@ -108,21 +134,33 @@
 .cityAdmin-rates ul li {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #333333; /* Dark text for readability */
+    color: var(--text-color-dark);
 }
 
-/* Additional styling for emphasis */
+/* Subtle Accents with Red, Yellow, Green, and Purple */
+.cityAdmin-content h2, .cityAdmin-info h2, .cityAdmin-rates h2 {
+    border-bottom: 3px solid var(--highlight-purple); /* Purple accent */
+}
+
+.cityAdmin-content ul li, .cityAdmin-info ul li {
+    color: var(--highlight-green); /* Green bullet points */
+}
+
+.cityAdmin-header-content h1 {
+    border-bottom: 3px solid var(--highlight-red); /* Red underline for headers */
+}
+
 .cityAdmin-rates h3 {
     font-size: 28px;
-    color: #044372;
+    color: var(--highlight-purple);
     margin-top: 40px;
 }
 
 /* Styling for important notices or emphasis */
 .cityAdmin-rates p.notice {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
+    background-color: var(--highlight-yellow);
+    color: var(--text-color-dark);
+    border: 1px solid var(--highlight-red);
     padding: 10px;
     margin-top: 20px;
     font-weight: bold;
@@ -149,6 +187,14 @@
     }
 
     .cityAdmin-rates table th, .cityAdmin-rates table td {
+        font-size: 14px;
+    }
+
+    .cityAdmin-rates h3 {
+        font-size: 24px;
+    }
+
+    .cityAdmin-rates p.notice {
         font-size: 14px;
     }
 }

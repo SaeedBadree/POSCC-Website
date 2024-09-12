@@ -2,13 +2,14 @@
     --primary-color: #003366; /* Royal Blue */
     --accent-color-yellow: #fdd835; /* Yellow from logo */
     --accent-color-red: #ff0000; /* Red from logo */
+    --accent-color-green: #4caf50; /* Green from logo */
+    --accent-color-purple: #6a1b9a; /* Purple from logo */
     --secondary-color: #f0f0f0; /* Light Gray */
     --text-color: #333333; /* Dark Gray for Text */
     --background-color: #ffffff; /* White Background */
-    --overlay-dark: rgba(0, 0, 0, 0.6); /* Dark overlay for images */
-    --overlay-light: rgba(255, 255, 255, 0.8); /* Light overlay for images */
 }
 
+/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -28,10 +29,7 @@ body {
     color: white; /* Ensure white text for headings in header */
     text-align: center;
     padding: 100px 20px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: overlay;
-    background-color: var(--overlay-dark); /* Darken the background image */
+    background-color: var(--primary-color); /* Royal blue background */
 }
 
 .cityEngineers-header h1 {
@@ -54,7 +52,7 @@ body {
     padding: 60px 20px;
     background-color: var(--secondary-color); /* Light gray background */
     text-align: left;
-    border-top: 4px solid var(--primary-color); 
+    border-top: 4px solid var(--primary-color);
     border-bottom: 4px solid var(--primary-color);
     margin-bottom: 50px;
 }
@@ -63,15 +61,13 @@ body {
     font-size: 32px;
     color: var(--primary-color); /* Royal Blue */
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--accent-color-yellow); /* Yellow border for visual enhancement */
+    border-bottom: 3px solid var(--accent-color-yellow); /* Subtle yellow border for visual enhancement */
 }
 
 /* Make all non-heading text explicitly dark */
 .cityEngineers-content p,
 .cityEngineers-content ul li,
-.cityEngineers-content ol li,
-.cityEngineers-info p,
-.cityEngineers-info ul li {
+.cityEngineers-content ol li {
     font-size: 16px;
     color: var(--text-color); /* Explicitly set dark gray text */
     margin-bottom: 25px;
@@ -80,27 +76,24 @@ body {
 /* City Engineers Info Section */
 .cityEngineers-info {
     padding: 60px 20px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom right;
-    background-blend-mode: overlay;
-    background-color: var(--overlay-light); /* Lighten the background image */
+    background-color: var(--background-color); /* White background for clarity */
     text-align: left;
-    border-top: 2px solid var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    border-top: 2px solid var(--accent-color-green); /* Subtle green accent border */
+    border-bottom: 2px solid var(--accent-color-purple); /* Subtle purple accent border */
 }
 
 .cityEngineers-info h2 {
     font-size: 32px;
     color: var(--primary-color); /* Royal Blue */
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--accent-color-red); /* Red border for visual enhancement */
+    border-bottom: 3px solid var(--accent-color-red); /* Subtle red border for visual enhancement */
 }
 
-/* Hover Effects */
-.cityEngineers-header:hover,
-.cityEngineers-info:hover {
-    background-blend-mode: lighten; /* Make the image blend more on hover */
+.cityEngineers-info p,
+.cityEngineers-info ul li {
+    font-size: 16px;
+    color: var(--text-color); /* Ensure dark gray text for readability */
+    margin-bottom: 25px;
 }
 
 /* Responsive Design */
@@ -119,9 +112,5 @@ body {
 
     .cityEngineers-content p, .cityEngineers-info p {
         font-size: 14px;
-    }
-
-    .cityEngineers-header, .cityEngineers-info {
-        background-size: contain; /* Ensure background images scale properly */
     }
 }
