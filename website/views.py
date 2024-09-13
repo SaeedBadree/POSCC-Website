@@ -154,3 +154,7 @@ def market():
 @views.route('/maintenance')
 def maintenance():
     return render_template('maintenance.html')
+
+@views.route('/news')
+def news():
+    return render_template('news.html')

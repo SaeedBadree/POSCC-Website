@@ -19,9 +19,10 @@
 }
 
 /* Nav Section */
+/* General nav styles */
 nav {
   display: flex;
-  padding: 1.5% 6%; /* Adjust padding for a more compact design */
+  padding: 1.5% 6%;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-black);
@@ -32,12 +33,18 @@ nav {
 }
 
 nav img {
-  width: 130px; /* Reduced logo size for a cleaner header */
+  width: 130px;
 }
 
 .nav-links {
   flex: 1;
   text-align: right;
+}
+
+.nav-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-links ul li {
@@ -59,6 +66,7 @@ nav img {
   color: var(--color-accent);
 }
 
+/* Hover underline effect */
 .nav-links ul li::after {
   content: '';
   width: 0%;
@@ -77,36 +85,166 @@ nav .fa {
   display: none;
 }
 
-/* Responsive adjustments */
+/* Dropdown menu styles */
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  background: var(--color-primary);
+  padding: 10px 0;
+  z-index: 999;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow for floating effect */
+}
+
+.dropdown-menu-1 {
+  position: absolute;
+  display: none;
+  background: var(--color-secondary);
+  padding: 10px 0;
+  z-index: 999;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
+}
+
+/* Dropdown and sub-dropdown links */
+.dropdown-menu ul,
+.dropdown-menu-1 ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dropdown-menu ul li,
+.dropdown-menu-1 ul li {
+  display: block;
+  padding: 10px;
+}
+
+.dropdown-menu ul li a,
+.dropdown-menu-1 ul li a {
+  padding: 12px 20px;
+  color: #fff;
+  white-space: nowrap;
+  display: block;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu ul li a:hover,
+.dropdown-menu-1 ul li a:hover {
+  background-color: var(--color-accent);
+}
+
+/* Dropdown on hover */
+.nav-links ul li:hover .dropdown-menu {
+  display: block;
+  top: 100%;
+  left: 0;
+}
+
+/* Sub-menu alignment */
+.dropdown-menu-1 {
+  left: 100%;
+  top: 0;
+}
+
+/* Sub-dropdown hover */
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+  display: block;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .nav-links ul li {
-    display: block;
-  }
-
   .nav-links {
-    position: absolute;
-    background: var(--color-primary);
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right: -200px;
-    text-align: left;
-    z-index: 2;
-    transition: 1s;
+      position: absolute;
+      background: var(--color-primary);
+      height: 100vh;
+      width: 250px;
+      top: 0;
+      right: -250px;
+      text-align: left;
+      z-index: 2;
+      transition: right 0.5s ease;
   }
 
-  nav .fa {
-    display: block;
-    color: #fff;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
+  .nav-links.show {
+      right: 0;
   }
 
   .nav-links ul {
-    padding: 30px;
+      display: block;
+      padding: 0;
+      margin: 0;
+  }
+
+  .nav-links ul li {
+      display: block;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+      width: 100%;
+  }
+
+  nav .fa-bars {
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+  }
+
+  nav .fa-times {
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+  }
+
+  /* Hide dropdown and sub-dropdown menus by default */
+  .dropdown-menu,
+  .dropdown-menu-1 {
+      display: none;
+      position: relative;
+      background: var(--color-primary);
+      padding: 0;
+      min-width: 100%;
+  }
+
+  .nav-links ul li:hover .dropdown-menu,
+  .dropdown-menu ul li:hover .dropdown-menu-1 {
+      display: block;
+      position: static;
+  }
+
+  /* Add space between dropdowns for mobile */
+  .dropdown-menu ul li,
+  .dropdown-menu-1 ul li {
+      padding: 12px 18px;
+  }
+
+  /* Increase contrast for dropdown and sub-dropdown */
+  .dropdown-menu {
+      background-color: #001f3f; /* Darker blue for distinction */
+  }
+
+  .dropdown-menu-1 {
+      background-color: #004080; /* Slightly lighter blue */
+  }
+
+  /* Add border for clearer distinction */
+  .dropdown-menu {
+      border: 1px solid #005bb5;
+  }
+
+  .dropdown-menu-1 {
+      border: 1px solid #0073ff;
   }
 }
+
 
 /* Video Loop Section */
 .video_loop {
