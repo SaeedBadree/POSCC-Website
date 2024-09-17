@@ -56,7 +56,6 @@
         <a href="{{ url_for('views.home') }}"><img src="{{ url_for('static', filename='images/posccLogo.png') }}"
                 id="poscclogo" alt="POSCC Logo"></a>
         <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="{{ url_for('views.home') }}">Home</a></li>
                 <li>
@@ -236,6 +235,7 @@
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
+        <i class="fa fa-times" onclick="hideMenu()" style="display: none;"></i> <!-- Close menu icon -->
     </nav>
     <div class="container">
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -322,59 +322,7 @@
         </div>
     </section>
 
-    <!-- JavaScript for Toggle Menu -->
-    <script>
-        var navLinks = document.getElementById("navLinks");
-
-        function showMenu() {
-            navLinks.style.right = "0";
-        }
-
-        function hideMenu() {
-            navLinks.style.right = "-200px";
-        }
-
-        function preventOverflow() {
-            const dropdowns = document.querySelectorAll('.dropdown-menu, .dropdown-menu-1');
-
-            dropdowns.forEach(dropdown => {
-                const rect = dropdown.getBoundingClientRect();
-                const isOverflowing = rect.right > window.innerWidth;
-
-                if (isOverflowing) {
-                    dropdown.classList.add('is-overflowing');
-                } else {
-                    dropdown.classList.remove('is-overflowing');
-                }
-            });
-        }
-
-        window.addEventListener('resize', preventOverflow);
-        document.addEventListener('DOMContentLoaded', preventOverflow);
-
-        function checkOverflow(element) {
-            const rect = element.getBoundingClientRect();
-            return rect.right > window.innerWidth || rect.left < 0;
-        }
-
-        document.querySelectorAll('.nav-links ul li .dropdown-menu').forEach(dropdown => {
-            dropdown.addEventListener('mouseover', function () {
-                this.classList.remove('is-overflowing');
-                if (checkOverflow(this)) {
-                    this.classList.add('is-overflowing');
-                }
-            });
-
-            dropdown.querySelectorAll('.dropdown-menu-1').forEach(subDropdown => {
-                subDropdown.addEventListener('mouseover', function () {
-                    this.classList.remove('is-overflowing');
-                    if (checkOverflow(this)) {
-                        this.classList.add('is-overflowing');
-                    }
-                });
-            });
-        });
-    </script>
+   
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
