@@ -85,47 +85,70 @@
             </div>
             <div class="service-apply">
                 <h4>How to Apply</h4>
+                <p>Please call +1 868 123-4567 to request water delivery to your residence</p>
                 <p>Submit the request form and proof of residence to the Public Health Department. After the application is processed, water distribution will be scheduled within 48 hours.</p>
             </div>
         </div>
     </div>
 
-    <!-- Service 3: Public Complaints -->
-    <div class="service" id="public-complaints">
-        <button class="collapsible">Public Complaints</button>
-        <div class="content">
-            <div class="service-requirements">
-                <h4>Requirements</h4>
-                <ul>
-                    <li>Completed Complaint Form (<a href="{{ url_for('static', filename='files/complaint_form.pdf') }}" download>Download PDF</a>)</li>
-                    <li>Detailed description of the issue</li>
-                    <li>Photos or evidence (if applicable)</li>
-                </ul>
-            </div>
-            <div class="service-apply">
-                <h4>How to Apply</h4>
-                <p>Fill out the complaint form and submit it to the Public Health Department in person, or send it via email to complaints@publichealth.gov. Our team will follow up within 48 hours.</p>
-            </div>
+   <!-- Service 3: Public Complaints -->
+<div class="service" id="public-complaints">
+    <button class="collapsible">Public Complaints</button>
+    <div class="content">
+        <div class="service-requirements">
+            <h4>Requirements</h4>
+            <ul>
+                <li>Please read and complete the following Public Complaints form: (<a href="{{ url_for('static', filename='files/public_complaints.pdf') }}" download>Download PDF</a>)</li>
+                <p><button class="open-modal" data-modal="pdfModalPublicComplaints">Preview PDF</button></p>
+                
+                <!-- Modal for PDF Preview -->
+                <!-- Corrected modal id -->
+                <div id="pdfModalPublicComplaints" class="modal"> 
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <embed src="{{ url_for('static', filename='files/public_complaints.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="service-apply">
+            <h4>How to Apply</h4>
+            <p>Fill out the complaint form and submit it to the Public Health Department in person</p>
         </div>
     </div>
+</div>
+<!-- Service 4: Cesspit Cleaning -->
+<div class="service" id="cesspit-cleaning">
+    <button class="collapsible">Cesspit Cleaning</button>
+    <div class="content">
+        <div class="service-requirements">
+            <h4>Requirements</h4>
+            <ul>
+                <li>
+                    Please read and complete the following Cesspool Cleaning form: 
+                    (<a href="{{ url_for('static', filename='files/cesspool_cleaning.pdf') }}" download>Download PDF</a>)
+                </li>
+                <li>Present form at cashier and make payment for the service.</li>
+            </ul>
+            <!-- Modal Trigger Button should not be inside a <ul><li> -->
+            <p>
+                <button class="open-modal" data-modal="pdfModalCesspoolCleaning">Preview PDF</button>
+            </p>
 
-    <!-- Service 4: Cesspit Cleaning -->
-    <div class="service" id="cesspit-cleaning">
-        <button class="collapsible">Cesspit Cleaning</button>
-        <div class="content">
-            <div class="service-requirements">
-                <h4>Requirements</h4>
-                <ul>
-                    <li>Completed Cesspit Cleaning Request Form (<a href="{{ url_for('static', filename='files/cesspit_cleaning_form.pdf') }}" download>Download PDF</a>)</li>
-                    <li>Proof of ownership of the property (Deed or Lease)</li>
-                </ul>
-            </div>
-            <div class="service-apply">
-                <h4>How to Apply</h4>
-                <p>Submit the Cesspit Cleaning Request Form and proof of ownership to the Public Health Department. The cleaning will be scheduled within 72 hours.</p>
+            <!-- Modal for PDF Preview -->
+            <div id="pdfModalCesspoolCleaning" class="modal"> 
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/cesspool_cleaning.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
             </div>
         </div>
+        <div class="service-apply">
+            <h4>How to Apply</h4>
+            <p>Submit the Cesspit Cleaning Request Form and proof of ownership to the Public Health Department. The cleaning will be scheduled.</p>
+        </div>
     </div>
+</div>
 </section>
 
 {% endblock %}
