@@ -14,14 +14,106 @@ function showMenu() {
 // Hide the mobile menu (when close icon is clicked)
 function hideMenu() {
     navLinks.classList.remove("show"); // Hide the nav
-    navLinks.style.right = "-250px";  // Slide it off the screen to the right
+    navLinks.style.right = "-100%";  // Slide it off the screen to the right
     closeMenuIcon.style.display = "none"; // Hide close icon
     openMenuIcon.style.display = "block"; // Show hamburger icon again
 }
 
-// Event listeners to handle clicks
+// Event listeners to handle clicks on hamburger and close icons
 openMenuIcon.addEventListener("click", showMenu);  // Handle hamburger menu click
 closeMenuIcon.addEventListener("click", hideMenu);  // Handle close icon click
+
+// Function to toggle dropdown menus in mobile view
+function applyMobileDropdowns() {
+    document.querySelectorAll(".nav-links ul li").forEach(function (li) {
+        li.addEventListener("touchstart", function (e) {
+            e.preventDefault(); // Prevent default touch behavior
+            const dropdownMenu = li.querySelector(".dropdown-menu");
+            const isVisible = dropdownMenu && dropdownMenu.classList.contains("show");
+
+            // Hide all dropdowns first
+            document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
+                menu.classList.remove("show");
+            });
+
+            // Toggle the clicked dropdown
+            if (!isVisible && dropdownMenu) {
+                dropdownMenu.classList.add("show");
+            }
+        });
+    });
+
+    // Handle sub-dropdown menus the same way
+    document.querySelectorAll(".dropdown-menu ul li").forEach(function (li) {
+        li.addEventListener("touchstart", function (e) {
+            e.preventDefault(); // Prevent default touch behavior
+            const subDropdownMenu = li.querySelector(".dropdown-menu-1");
+            const isVisible = subDropdownMenu && subDropdownMenu.classList.contains("show");
+
+            // Hide all sub-dropdowns first
+            document.querySelectorAll(".dropdown-menu-1").forEach(function (menu) {
+                menu.classList.remove("show");
+            });
+
+            // Toggle the clicked sub-dropdown
+            if (!isVisible && subDropdownMenu) {
+                subDropdownMenu.classList.add("show");
+            }
+        });
+    });
+}
+
+// **Function to toggle dropdowns on hover for desktop view**
+function applyDesktopDropdowns() {
+    document.querySelectorAll(".nav-links ul li").forEach(function (li) {
+        li.addEventListener("mouseover", function () {
+            const dropdownMenu = li.querySelector(".dropdown-menu");
+            if (dropdownMenu) {
+                dropdownMenu.classList.add("show");
+            }
+        });
+
+        li.addEventListener("mouseleave", function () {
+            const dropdownMenu = li.querySelector(".dropdown-menu");
+            if (dropdownMenu) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    });
+
+    document.querySelectorAll(".dropdown-menu ul li").forEach(function (li) {
+        li.addEventListener("mouseover", function () {
+            const subDropdownMenu = li.querySelector(".dropdown-menu-1");
+            if (subDropdownMenu) {
+                subDropdownMenu.classList.add("show");
+            }
+        });
+
+        li.addEventListener("mouseleave", function () {
+            const subDropdownMenu = li.querySelector(".dropdown-menu-1");
+            if (subDropdownMenu) {
+                subDropdownMenu.classList.remove("show");
+            }
+        });
+    });
+}
+
+// **Function to handle different behaviors for mobile and desktop**
+function handleResponsiveMenu() {
+    if (window.innerWidth <= 768) {
+        // Mobile view behavior
+        applyMobileDropdowns();
+    } else {
+        // Desktop view behavior
+        applyDesktopDropdowns();
+    }
+}
+
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", handleResponsiveMenu);
+
+// Reapply the function when window is resized
+window.addEventListener("resize", handleResponsiveMenu);
 
 // Function to prevent dropdowns from overflowing off the screen
 function preventOverflow() {
@@ -39,38 +131,11 @@ function preventOverflow() {
     });
 }
 
-// Add an event listener for window resizing to prevent overflow
+// Check for overflow on window resize and on page load
 window.addEventListener('resize', preventOverflow);
-
-// Ensure the overflow is checked when the page loads
 document.addEventListener('DOMContentLoaded', preventOverflow);
 
-// Function to check if an element overflows outside the window bounds
-function checkOverflow(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.right > window.innerWidth || rect.left < 0;
-}
-
-// Apply the overflow check when hovering over dropdowns
-document.querySelectorAll('.nav-links ul li .dropdown-menu').forEach(dropdown => {
-    dropdown.addEventListener('mouseover', function () {
-        this.classList.remove('is-overflowing');
-        if (checkOverflow(this)) {
-            this.classList.add('is-overflowing');
-        }
-    });
-
-    dropdown.querySelectorAll('.dropdown-menu-1').forEach(subDropdown => {
-        subDropdown.addEventListener('mouseover', function () {
-            this.classList.remove('is-overflowing');
-            if (checkOverflow(this)) {
-                this.classList.add('is-overflowing');
-            }
-        });
-    });
-});
-
-// Function to handle scroll-based actions for specific sections
+// **Scroll-based functionality**
 document.addEventListener('scroll', function () {
     const aboutSection = document.querySelector('.about-section');
     const linkItems = document.querySelectorAll('.link-item');
@@ -86,6 +151,24 @@ document.addEventListener('scroll', function () {
     linkItems.forEach(item => {
         if (item.getBoundingClientRect().top < triggerPoint) {
             item.classList.add('scrolled');
+        }
+    });
+});
+
+// Function to handle scrolling to specific sections
+function smoothScroll(target) {
+    document.querySelector(target).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Add smooth scroll behavior to navigation links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const target = this.getAttribute('href');
+        if (target.startsWith("#")) {
+            e.preventDefault();
+            smoothScroll(target);
         }
     });
 });

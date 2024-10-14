@@ -158,3 +158,7 @@ def maintenance():
 @views.route('/news')
 def news():
     return render_template('news.html')
+
+@views.route('/treasurers')
+def treasurers():
+    return render_template('treasurers.html')

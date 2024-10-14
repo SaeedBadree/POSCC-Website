@@ -1,5 +1,5 @@
-// COLLAPSIBLE SECTIONS - Functionality
 document.addEventListener("DOMContentLoaded", function() {
+    // COLLAPSIBLE SECTIONS
     var coll = document.getElementsByClassName("collapsible");
     for (var i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
@@ -12,10 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-});
 
-// MODAL FUNCTIONALITY - Function to toggle modals
-document.addEventListener("DOMContentLoaded", function() {
+    // MODAL FUNCTIONALITY
     var modals = document.querySelectorAll(".modal");
     var modalButtons = document.querySelectorAll(".open-modal");
     var closeButtons = document.querySelectorAll(".close");
@@ -40,18 +38,18 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     };
+
+    // Prevent overflow for collapsible content
+    function preventOverflow() {
+        const contentSections = document.querySelectorAll('.content');
+        contentSections.forEach(content => {
+            if (content.scrollHeight > window.innerHeight) {
+                content.style.overflowY = "auto";
+            }
+        });
+    }
+
+    window.addEventListener('resize', preventOverflow);
+    preventOverflow();  // Ensure it's called when the page loads
 });
 
-// Function to check overflow for collapsible content (optional)
-// This is added in case you have long content that may overflow from the modal or collapsible
-function preventOverflow() {
-    const contentSections = document.querySelectorAll('.content');
-    contentSections.forEach(content => {
-        if (content.scrollHeight > window.innerHeight) {
-            content.style.overflowY = "auto";
-        }
-    });
-}
-
-window.addEventListener('resize', preventOverflow);
-document.addEventListener('DOMContentLoaded', preventOverflow);
