@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}POSCC Website{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,7 +44,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
     <style>
         #map {
             height: 600px;
@@ -164,11 +165,56 @@
                                         </ul>
                                     </div>
                                 </li>
+                                <li>
+                                    <a href="{{ url_for('views.procurement') }}">Procurement <i class="fas fa-caret-right"></i></a>
+                                    <!-- Sub-dropdown menu -->
+                                    <div class="dropdown-menu-1">
+                                        <ul>
+                                            <li><a href="{{ url_for('views.procurement') }}">Annual Procurement Plan</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('views.publicHealth') }}">Public Health <i class="fas fa-caret-right"></i></a>
+                                    <!-- Sub-dropdown menu -->
+                                    <div class="dropdown-menu-1">
+                                        <ul>
+                                            <li><a href="{{ url_for('views.publicHealth') }}">Public Health Services</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('views.led') }}">Local Economic Development <i class="fas fa-caret-right"></i></a>
+                                    <!-- Sub-dropdown menu -->
+                                    <div class="dropdown-menu-1">
+                                        <ul>
+                                            <li><a href="{{ url_for('views.led') }}">Economic Development Initiatives</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('views.cityAssessors') }}">City Assessors <i class="fas fa-caret-right"></i></a>
+                                    <!-- Sub-dropdown menu -->
+                                    <div class="dropdown-menu-1">
+                                        <ul>
+                                            <li><a href="{{ url_for('views.cityAssessors') }}">City Assessors</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('views.treasurers') }}">Treasurer's Department <i class="fas fa-caret-right"></i></a>
+                                    <!-- Sub-dropdown menu -->
+                                    <div class="dropdown-menu-1">
+                                        <ul>
+                                            <li><a href="{{ url_for('views.treasurers') }}">Treasurer's Department</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </li>
-    
+                
                 <!-- Additional links -->
                 <li><a href="{{ url_for('views.meet_the_council') }}">Meet The Council</a></li>
                 <li><a href="{{ url_for('views.projects') }}">Projects</a></li>

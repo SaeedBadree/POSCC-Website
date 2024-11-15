@@ -143,4 +143,99 @@
     <h3>Additional Services</h3>
     <p>Requests for additional parking and security (City Police) must be made in advance and in writing. The Hall seats approximately 300 persons in the main hall and 100 persons in the balcony.</p>
 </section>
+
+<!-- Cemeteries Section -->
+<section class="cityAdmin-cemeteries">
+    <h2>Cemeteries Forms</h2>
+
+    <!-- Application to Remove Ownership -->
+    <div class="service">
+        <button class="collapsible">Application to Remove Ownership</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Application to Remove Ownership form: 
+                    (<a href="{{ url_for('static', filename='files/cemeteries_remove_owner.pdf') }}" download>Download PDF</a>)
+                </li>
+                <li>Submit the completed form to the City Administration Department.</li>
+            </ul>
+            <button class="open-modal" data-modal="pdfModalRemoveOwnership">Preview PDF</button>
+
+            <!-- Modal -->
+            <div id="pdfModalRemoveOwnership" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/cemeteries_remove_owner.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application to Include Owner -->
+    <div class="service">
+        <button class="collapsible">Application to Include Owner</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Application to Include Owner form: 
+                    (<a href="{{ url_for('static', filename='files/cemeteries_include_owner.pdf') }}" download>Download PDF</a>)
+                </li>
+                <li>Submit the completed form to the City Administration Department.</li>
+            </ul>
+            <button class="open-modal" data-modal="pdfModalIncludeOwner">Preview PDF</button>
+
+            <!-- Modal -->
+            <div id="pdfModalIncludeOwner" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/cemeteries_include_owner.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application to Change Owner -->
+    <div class="service">
+        <button class="collapsible">Application to Change Owner</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Application to Change Owner form: 
+                    (<a href="{{ url_for('static', filename='files/cemetries_change_owner.pdf') }}" download>Download PDF</a>)
+                </li>
+                <li>Submit the completed form to the City Administration Department.</li>
+            </ul>
+            <button class="open-modal" data-modal="pdfModalChangeOwner">Preview PDF</button>
+
+            <!-- Modal -->
+            <div id="pdfModalChangeOwner" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/cemeteries_change_owner.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application to Transfer Allotment -->
+    <div class="service">
+        <button class="collapsible">Application to Transfer Allotment</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Application to Transfer Allotment form: 
+                    (<a href="{{ url_for('static', filename='files/cemeteries_transfer_allotment.pdf') }}" download>Download PDF</a>)
+                </li>
+                <li>Submit the completed form to the City Administration Department.</li>
+            </ul>
+            <button class="open-modal" data-modal="pdfModalTransferAllotment">Preview PDF</button>
+
+            <!-- Modal -->
+            <div id="pdfModalTransferAllotment" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/cemeteries_transfer_allotment.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
+
+

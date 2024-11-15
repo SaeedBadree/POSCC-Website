@@ -1,12 +1,13 @@
 :root {
     --primary-color: #003366; /* Royal Blue */
-    --accent-color-yellow: #fdd835; /* Yellow from logo */
+    --accent-color-yellow: #193efa; /* Yellow from logo */
     --accent-color-red: #ff0000; /* Red from logo */
     --accent-color-green: #4caf50; /* Green from logo */
     --accent-color-purple: #6a1b9a; /* Purple from logo */
     --secondary-color: #f0f0f0; /* Light Gray */
     --text-color: #333333; /* Dark Gray for Text */
     --background-color: #ffffff; /* White Background */
+    --heading-text-color: #ffffff; /* Heading text color for dark backgrounds */
 }
 
 /* Reset and Global Styles */
@@ -21,12 +22,12 @@
 
 body {
     background-color: var(--background-color);
-    color: var(--text-color); /* Set global text color to dark gray */
+    color:black; /* Set global text color to dark gray */
 }
 
 /* City Engineers Header Section */
 .cityEngineers-header {
-    color: white; /* Ensure white text for headings in header */
+    color: var(--heading-text-color); /* Ensure white text for headings in dark backgrounds */
     text-align: center;
     padding: 100px 20px;
     background-color: var(--primary-color); /* Royal blue background */
@@ -69,7 +70,7 @@ body {
 .cityEngineers-content ul li,
 .cityEngineers-content ol li {
     font-size: 16px;
-    color: var(--text-color); /* Explicitly set dark gray text */
+    color: black; /* Explicitly set dark gray text */
     margin-bottom: 25px;
 }
 
@@ -92,7 +93,7 @@ body {
 .cityEngineers-info p,
 .cityEngineers-info ul li {
     font-size: 16px;
-    color: var(--text-color); /* Ensure dark gray text for readability */
+    color: black; /* Ensure dark gray text for readability */
     margin-bottom: 25px;
 }
 
