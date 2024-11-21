@@ -79,4 +79,151 @@
         <li>Thirty-four (34) Chargehands</li>
     </ul>
 </section>
+
+<!-- City Engineers Forms Section -->
+<section class="cityEngineers-forms">
+    <h2>Buildings Section Engineering Forms and Applications</h2>
+
+    <!-- Application for Copy/Search Form -->
+    <div class="service">
+        <button class="collapsible">Application for Copy/Search Form</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Application for Copy/Search form:
+                    (<a href="{{ url_for('static', filename='files/application_for_copy_search.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalCopySearch">Preview Form</button>
+            <!-- Modal -->
+            <div id="modalCopySearch" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/application_for_copy_search.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blocking Footway Form -->
+    <div class="service">
+        <button class="collapsible">Blocking Footway Form</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Blocking Footway form:
+                    (<a href="{{ url_for('static', filename='files/blocking_footway_form.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalBlockingFootway">Preview Form</button>
+            <!-- Modal -->
+            <div id="modalBlockingFootway" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/blocking_footway_form.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buildings Application Form -->
+    <div class="service">
+        <button class="collapsible">Buildings Application Form</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Buildings Application form:
+                    (<a href="{{ url_for('static', filename='files/buildings_application_form.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalBuildingsApplication">Preview Form</button>
+            <!-- Modal -->
+            <div id="modalBuildingsApplication" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/buildings_application_form.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cargo Container Form -->
+    <div class="service">
+        <button class="collapsible">Cargo Container Form</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Cargo Container form:
+                    (<a href="{{ url_for('static', filename='files/cargo_container_form.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalCargoContainer">Preview Form</button>
+            <!-- Modal -->
+            <div id="modalCargoContainer" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/cargo_container_form.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Execution of Work Form -->
+    <div class="service">
+        <button class="collapsible">Execution of Work Form</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Execution of Work form:
+                    (<a href="{{ url_for('static', filename='files/execution_of_work_form.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalExecutionWork">Preview Form</button>
+            <!-- Modal -->
+            <div id="modalExecutionWork" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/execution_of_work_form.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Removal of Premises Form -->
+    <div class="service">
+        <button class="collapsible">Removal of Premises Form</button>
+        <div class="content">
+            <ul>
+                <li>Download and fill out the Removal of Premises form:
+                    (<a href="{{ url_for('static', filename='files/removal_of_premises_form.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalRemovalPremises">Preview Form</button>
+            <!-- Modal -->
+            <div id="modalRemovalPremises" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/removal_of_premises_form.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revised Fee Structure -->
+    <div class="service">
+        <button class="collapsible">Revised Fee Structure</button>
+        <div class="content">
+            <ul>
+                <li>View the Revised Fee Structure:
+                    (<a href="{{ url_for('static', filename='files/revised_fee_structure_final.pdf') }}" download>Download PDF</a>)
+                </li>
+            </ul>
+            <button class="open-modal" data-modal="modalFeeStructure">Preview Document</button>
+            <!-- Modal -->
+            <div id="modalFeeStructure" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <embed src="{{ url_for('static', filename='files/revised_fee_structure_final.pdf') }}" type="application/pdf" width="100%" height="600px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
 {% endblock %}
