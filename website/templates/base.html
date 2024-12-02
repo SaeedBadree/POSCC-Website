@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/procurement.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/treasurers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/propertyManagement.css') }}">
 
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/geospatial.css') }}">   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,6 +136,15 @@
                                     <div class="dropdown-menu-1">
                                         <ul>
                                             <li><a href="{{ url_for('views.cityAdmin') }}">Office of the C.E.O</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('views.propertyManagement') }}">Property Management <i class="fas fa-caret-right"></i></a>
+                                    <!-- Sub-dropdown menu -->
+                                    <div class="dropdown-menu-1">
+                                        <ul>
+                                            <li><a href="{{ url_for('views.propertyManagement') }}">Administrative Department</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -353,6 +363,9 @@
     <script src="{{ url_for('static', filename='js/publicHealth.js') }}"></script>
     <script src="{{ url_for('static', filename='js/about.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+   
+
 </body>
 
 </html>

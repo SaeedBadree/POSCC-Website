@@ -1,5 +1,8 @@
 from flask import Blueprint, render_template, url_for, request, jsonify
 from flask_login import login_required, current_user
+from .forms import ChangeOwnershipForm, RemoveOwnershipForm, IncludeOwnershipForm, TransferAllotmentForm
+from .models import db, ChangeOwnershipFormModel  
+from flask import flash, redirect, url_for, render_template, request
 
 views = Blueprint('views', __name__)
 
@@ -119,10 +122,21 @@ def chatbot():
     return jsonify({"response": response})
 
 
-@views.route('/cityAdmin')
+@views.route('/cityAdmin', methods=['GET', 'POST'])
 def cityAdmin():
-    return render_template('cityAdmin.html')
+    change_ownership_form = ChangeOwnershipForm()
+    remove_ownership_form = RemoveOwnershipForm()
+    include_ownership_form = IncludeOwnershipForm()
+    transfer_allotment_form = TransferAllotmentForm()
 
+    return render_template(
+        'cityAdmin.html',
+        change_ownership_form=change_ownership_form,
+        remove_ownership_form=remove_ownership_form,
+        include_ownership_form=include_ownership_form,
+        transfer_allotment_form=transfer_allotment_form,
+    )
+    
 @views.route('/cityEngineering')
 def cityEngineering():
     return render_template('cityEngineering.html')
@@ -162,3 +176,64 @@ def news():
 @views.route('/treasurers')
 def treasurers():
     return render_template('treasurers.html')
+
+@views.route('/propertyManagement')
+def propertyManagement():
+    return render_template('propertyManagement.html')
+
+
+@views.route('/submit_change_ownership', methods=['GET', 'POST'])
+def submit_change_ownership():
+    form = ChangeOwnershipForm()
+    if form.validate_on_submit():  # This ensures the form is valid
+        # Save data to the database
+        new_entry = ChangeOwnershipFormModel(
+            date=form.date.data,
+            cemetery=form.cemetery.data,
+            block_number=form.block_number.data,
+            grave_space=form.grave_space.data,
+            owner_details=form.owner_details.data,
+            contact_number=form.contact_number.data,
+            name_1=form.name_1.data,
+            address_1=form.address_1.data,
+            signature_1=form.signature_1.data,
+            id_number_1=form.id_number_1.data,
+        )
+        db.session.add(new_entry)
+        db.session.commit()
+
+        flash('Form submitted successfully!', 'success')
+        return redirect(url_for('views.cityAdmin'))
+
+    return render_template('cityAdmin.html', form=form)
+
+
+
+@views.route('/submit_remove_ownership', methods=['GET', 'POST'])
+def submit_remove_ownership():
+    form = RemoveOwnershipForm()
+    if form.validate_on_submit():
+        # Process form data here, e.g., save to the database
+        flash('Remove Ownership form submitted successfully!', 'success')
+        return redirect(url_for('views.cityAdmin'))
+    return render_template('cityAdmin.html', remove_ownership_form=form)
+
+@views.route('/submit_include_ownership', methods=['GET', 'POST'])
+def submit_include_ownership():
+    form = IncludeOwnershipForm()
+    if form.validate_on_submit():
+        # Process form data here, e.g., save to the database
+        flash('Include Ownership form submitted successfully!', 'success')
+        return redirect(url_for('views.cityAdmin'))
+    return render_template('cityAdmin.html', include_ownership_form=form)
+
+@views.route('/submit_transfer_allotment', methods=['GET', 'POST'])
+def submit_transfer_allotment():
+    form = TransferAllotmentForm()
+    if form.validate_on_submit():
+        # Process form data here, e.g., save to the database
+        flash('Transfer Allotment form submitted successfully!', 'success')
+        return redirect(url_for('views.cityAdmin'))
+    return render_template('cityAdmin.html', transfer_allotment_form=form)
+
+

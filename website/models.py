@@ -2,6 +2,7 @@ from . import db
 from flask_login import UserMixin
 from itsdangerous import URLSafeTimedSerializer as Serializer  # Updated import
 from flask import current_app
+from sqlalchemy.dialects.postgresql import JSON
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -24,3 +25,19 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"<User {self.email}>"
+
+
+
+
+class ChangeOwnershipFormModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date, nullable=False)
+    cemetery = db.Column(db.String(100), nullable=False)
+    block_number = db.Column(db.String(50), nullable=False)
+    grave_space = db.Column(db.String(50), nullable=False)
+    owner_details = db.Column(db.Text, nullable=False)
+    contact_number = db.Column(db.String(15), nullable=False)
+    name_1 = db.Column(db.String(100), nullable=True)
+    address_1 = db.Column(db.String(200), nullable=True)
+    signature_1 = db.Column(db.String(50), nullable=True)
+    id_number_1 = db.Column(db.String(20), nullable=True)
