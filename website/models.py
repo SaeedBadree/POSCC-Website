@@ -3,6 +3,8 @@ from flask_login import UserMixin
 from itsdangerous import URLSafeTimedSerializer as Serializer  # Updated import
 from flask import current_app
 from sqlalchemy.dialects.postgresql import JSON
+from datetime import datetime, timezone
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,3 +43,58 @@ class ChangeOwnershipFormModel(db.Model):
     address_1 = db.Column(db.String(200), nullable=True)
     signature_1 = db.Column(db.String(50), nullable=True)
     id_number_1 = db.Column(db.String(20), nullable=True)
+
+
+class PublicComplaint(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date, nullable=False)
+    premises = db.Column(db.String(255), nullable=False)
+    nature_of_complaint = db.Column(db.Text, nullable=False)
+    complainant_name = db.Column(db.String(255), nullable=False)
+    contact_details = db.Column(db.String(255), nullable=False)
+    action_taken = db.Column(db.Text, nullable=True)
+    
+    
+class FoodHandler(db.Model):
+    __tablename__ = 'food_handlers'
+
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.Date, nullable=False)
+    name = db.Column(db.String(255), nullable=False)
+    sex = db.Column(db.String(10), nullable=False)
+    home_address = db.Column(db.String(255), nullable=False)
+    date_of_birth = db.Column(db.Date, nullable=False)
+    identification_no = db.Column(db.String(50), nullable=False)
+    telephone = db.Column(db.String(20), nullable=True)
+    business_name = db.Column(db.String(255), nullable=False)
+    business_type = db.Column(db.String(255), nullable=False)
+    business_address = db.Column(db.String(255), nullable=False)
+
+    # Family History
+    family_typhoid = db.Column(db.Boolean, nullable=True, default=False)
+    family_tuberculosis = db.Column(db.Boolean, nullable=True, default=False)
+    family_jaundice = db.Column(db.Boolean, nullable=True, default=False)
+    family_chronic_cough = db.Column(db.Boolean, nullable=True, default=False)
+    family_hospitalization = db.Column(db.Boolean, nullable=True, default=False)
+    family_other = db.Column(db.String(255), nullable=True)
+
+    # Personal History
+    personal_typhoid = db.Column(db.Boolean, nullable=True, default=False)
+    personal_tuberculosis = db.Column(db.Boolean, nullable=True, default=False)
+    personal_jaundice = db.Column(db.Boolean, nullable=True, default=False)
+    personal_chronic_cough = db.Column(db.Boolean, nullable=True, default=False)
+    personal_hospitalization = db.Column(db.Boolean, nullable=True, default=False)
+    personal_asthmatic_attacks = db.Column(db.Boolean, nullable=True, default=False)
+    personal_allergies = db.Column(db.Boolean, nullable=True, default=False)
+    personal_other = db.Column(db.String(255), nullable=True)
+
+
+    # Declaration
+    declaration = db.Column(db.Boolean, nullable=False)
+    applicant_signature = db.Column(db.String(255), nullable=False)
+    applicant_signature_date = db.Column(db.Date, nullable=False)
+
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
+
+    def __repr__(self):
+        return f'<FoodHandler {self.name}>'    

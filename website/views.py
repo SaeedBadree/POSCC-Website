@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, url_for, request, jsonify
 from flask_login import login_required, current_user
-from .forms import ChangeOwnershipForm, RemoveOwnershipForm, IncludeOwnershipForm, TransferAllotmentForm
-from .models import db, ChangeOwnershipFormModel  
+from .forms import ChangeOwnershipForm, RemoveOwnershipForm, IncludeOwnershipForm, TransferAllotmentForm, FoodHandlersForm, PublicComplaintForm
+from .models import db, ChangeOwnershipFormModel,PublicComplaint,FoodHandler  
 from flask import flash, redirect, url_for, render_template, request
 
 views = Blueprint('views', __name__)
@@ -27,26 +27,104 @@ def departments():
 def meet_the_council():
     councillors = [
         {
-            'name': 'Neubun Clarke',
-            'ward': 'Ward 1',
-            'image': 'Neubun_Clarke.jpeg',
-            'description': 'John Doe has been a dedicated councillor for Ward 1 since 2015. His work focuses on improving local infrastructure and community programs...'
+            "name": "Alderman Chinua Alleyne",
+            "ward": "Ward 1",
+            "image": "Alderman_Chinua_Alleyne.jpg",
+            "description": "Alderman Chinua Alleyne is the Mayor of the City of Port of Spain and can be contacted via chinua.alleyne@gmail.com."
         },
         {
-            'name': 'Jane Smith',
-            'ward': 'Ward 2',
-            'image': 'jane_smith.jpg',
-            'description': 'Jane Smith has been a strong advocate for environmental sustainability and public health in Ward 2...'
+            "name": "Mr. Wade Coker",
+            "ward": "Ward 2",
+            "image": "Mr._Wade_Coker.jpg",
+            "description": "Mr. Wade Coker can be contacted via wadecoker69@gmail.com."
         },
         {
-            'name': 'Robert Johnson',
-            'ward': 'Ward 3',
-            'image': 'robert_johnson.jpg',
-            'description': 'Robert Johnson is known for his work on youth development and educational initiatives in Ward 3...'
+            "name": "Mr. Brian Lewis",
+            "ward": "Ward 3",
+            "image": "Mr._Brian_Lewis.jpg",
+            "description": "Mr. Brian Lewis can be contacted via briaclewis@gmail.com."
         },
-        # Add more sample councillors as needed
+        {
+            "name": "Mr. Kareem Marcelle",
+            "ward": "Ward 4",
+            "image": "Mr._Kareem_Marcelle.jpg",
+            "description": "Mr. Kareem Marcelle can be contacted via kareemmarcelle17@gmail.com."
+        },
+        {
+            "name": "Ms. Maloula Bourne",
+            "ward": "Ward 5",
+            "image": "Ms._Maloula_Bourne.jpg",
+            "description": "Ms. Maloula Bourne can be contacted via belmontnorthandwest@gmail.com."
+        },
+        {
+            "name": "Mr. Raphael Bournes",
+            "ward": "Ward 6",
+            "image": "Mr._Raphael_Bournes.jpg",
+            "description": "Mr. Raphael Bournes can be contacted via raphael.bournes77@gmail.com."
+        },
+        {
+            "name": "Ms. Nicole Young",
+            "ward": "Ward 7",
+            "image": "Ms._Nicole_Young.jpg",
+            "description": "Ms. Nicole Young can be contacted via belmonteast1@gmail.com."
+        },
+        {
+            "name": "Ms. Alicia Gift",
+            "ward": "Ward 8",
+            "image": "Ms._Alicia_Gift.jpg",
+            "description": "Ms. Alicia Gift can be contacted via aliciagift@hotmail.com."
+        },
+        {
+            "name": "Ms. Abena Hartley",
+            "ward": "Ward 9",
+            "image": "Ms._Abena_Hartley.jpg",
+            "description": "Ms. Abena Hartley is the Deputy Mayor and can be contacted via abenahartley@gmail.com."
+        },
+        {
+            "name": "Mr. Dennis Russel Bristol",
+            "ward": "Ward 10",
+            "image": "Mr._Dennis_Russel_Bristol.jpg",
+            "description": "Mr. Dennis Russel Bristol can be contacted via southernposcouncillor@gmail.com."
+        },
+        {
+            "name": "Mr. Owen St. Rose",
+            "ward": "Ward 11",
+            "image": "Mr._Owen_St._Rose.jpg",
+            "description": "Mr. Owen St. Rose can be contacted via ostrose21@gmail.com."
+        },
+        {
+            "name": "Mr. Imran Khan",
+            "ward": "Ward 12",
+            "image": "Mr._Imran_Khan.jpg",
+            "description": "Mr. Imran Khan can be contacted via 1868imrankhan@gmail.com."
+        },
+        {
+            "name": "Mr. Jameel Bisnath",
+            "ward": "Ward 13",
+            "image": "Mr._Jameel_Bisnath.jpg",
+            "description": "Mr. Jameel Bisnath can be contacted via jameelbisnath5@gmail.com."
+        },
+        {
+            "name": "Mr. Clint Baptiste",
+            "ward": "Ward 14",
+            "image": "Mr._Clint_Baptiste.jpg",
+            "description": "Mr. Clint Baptiste can be contacted via clintb1604@gmail.com."
+        },
+        {
+            "name": "Ms. Esther Sylvester",
+            "ward": "Ward 15",
+            "image": "Ms._Esther_Sylvester.jpg",
+            "description": "Ms. Esther Sylvester can be contacted via estar8322@gmail.com."
+        },
+        {
+            "name": "Ms. Jenneil Frederick",
+            "ward": "Ward 16",
+            "image": "Ms._Jenneil_Frederick.jpg",
+            "description": "Ms. Jenneil Frederick can be contacted via stanns.river.south@gmail.com."
+        },
     ]
     return render_template('council.html', councillors=councillors)
+
 
 
 @views.route('/contact')
@@ -145,9 +223,22 @@ def cityEngineering():
 def cityPolice():
     return render_template('cityPolice.html')
 
-@views.route('/publicHealth')
+@views.route('/publicHealth', methods=['GET'])
 def publicHealth():
-    return render_template('publicHealth.html')
+    # Instantiate both forms
+    food_handlers_form = FoodHandlersForm()
+    public_complaint_form = PublicComplaintForm()
+
+    # Render the public health page with both forms
+    return render_template(
+        'publicHealth.html',
+        food_handlers_form=food_handlers_form,
+        public_complaint_form=public_complaint_form
+    )
+
+
+
+
 
 @views.route('/led')
 def led():
@@ -236,4 +327,72 @@ def submit_transfer_allotment():
         return redirect(url_for('views.cityAdmin'))
     return render_template('cityAdmin.html', transfer_allotment_form=form)
 
+@views.route('/submit_food_handlers', methods=['POST'])
+def submit_food_handlers():
+    form = FoodHandlersForm()
+    if form.validate_on_submit():
+        # Save the form data to the database
+        new_food_handler_entry = FoodHandler(
+            date=form.date.data,
+            name=form.name.data,
+            sex=form.sex.data,
+            home_address=form.home_address.data,
+            date_of_birth=form.date_of_birth.data,
+            identification_no=form.identification_no.data,
+            telephone=form.telephone.data,
+            business_name=form.business_name.data,
+            business_type=form.business_type.data,
+            business_address=form.business_address.data,
+            family_history={
+                'typhoid': form.family_typhoid.data,
+                'tuberculosis': form.family_tuberculosis.data,
+                'jaundice': form.family_jaundice.data,
+                'chronic_cough': form.family_chronic_cough.data,
+                'hospitalization': form.family_hospitalization.data,
+                'other': form.family_other.data
+            },
+            personal_history={
+                'typhoid': form.personal_typhoid.data,
+                'tuberculosis': form.personal_tuberculosis.data,
+                'jaundice': form.personal_jaundice.data,
+                'chronic_cough': form.personal_chronic_cough.data,
+                'hospitalization': form.personal_hospitalization.data,
+                'asthmatic_attacks': form.personal_asthmatic_attacks.data,
+                'allergies': form.personal_allergies.data,
+                'other': form.personal_other.data
+            },
+            declaration=form.declaration.data,
+            applicant_signature=form.applicant_signature.data,
+            applicant_signature_date=form.applicant_signature_date.data
+        )
+        db.session.add(new_food_handler_entry)
+        db.session.commit()
+        flash('Food Handlers form submitted successfully!', 'success')
+    else:
+        flash('There was an error submitting the Food Handlers form.', 'danger')
+    
+    return redirect(url_for('views.publicHealth'))
+
+
+
+@views.route('/submit_public_complaint', methods=['POST'])
+def submit_public_complaint():
+    form = PublicComplaintForm()
+    if form.validate_on_submit():
+        # Save the form data to the database
+        new_complaint = PublicComplaint(
+            date=form.date.data,
+            premises=form.premises.data,
+            nature_of_complaint=form.nature_of_complaint.data,
+            complainant_name=form.complainant_name.data,
+            contact_details=form.contact_details.data,
+            action_taken=form.action_taken.data,
+        )
+        db.session.add(new_complaint)
+        db.session.commit()
+        flash('Public Complaint form submitted successfully!', 'success')
+    else:
+        flash('There was an error submitting the Public Complaint form.', 'danger')
+
+    return redirect(url_for('views.publicHealth'))
 

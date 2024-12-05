@@ -280,58 +280,67 @@
 
 
 
-    <!-- Footer Section -->
-    <section class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>About Us</h4>
-                <ul>
-                    <li><a href="#">Port of Spain At A Glance</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">Governance</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="#">Maintenance</a></li>
-                    <li><a href="#">Public Health</a></li>
-                    <li><a href="#">Sanitation</a></li>
-                    <li><a href="#">Cesspool Cleaning</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Departments</h4>
-                <ul>
-                    <li><a href="#">City Engineering</a></li>
-                    <li><a href="#">Procurement</a></li>
-                    <li><a href="#">Municipal Police</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li><a href="#">Contact Information</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Chat Bot</a></li>
-                </ul>
-            </div>
+<!-- Footer Section -->
+<section class="footer">
+    <div class="footer-content">
+        <!-- About Us Column -->
+        <div class="footer-column">
+            <h4>About Us</h4>
+            <ul>
+                <li><a href="{{ url_for('views.about') }}">Port of Spain At A Glance</a></li>
+                <li><a href="{{ url_for('views.about') }}">History</a></li>
+                <li><a href="{{ url_for('views.about') }}">Governance</a></li>
+            </ul>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-logo">
-                <img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}" alt="POSCC Logo">
-            </div>
-            <div class="footer-social">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-linkedin-in"></i>
-            </div>
-            <div class="footer-legal">
-                <p>Terms of Use | Privacy Policy | © 2024 POSCC. All Rights Reserved.</p>
-            </div>
+        <!-- Our Services Column -->
+        <div class="footer-column">
+            <h4>Our Services</h4>
+            <ul>
+                <li><a href="{{ url_for('views.maintenance') }}">Maintenance</a></li>
+                <li><a href="{{ url_for('views.publicHealth') }}">Public Health</a></li>
+                <li><a href="{{ url_for('views.services') }}">Sanitation</a></li>
+                <li><a href="{{ url_for('views.services') }}">Cesspool Cleaning</a></li>
+            </ul>
         </div>
-    </section>
+        <!-- Departments Column -->
+        <div class="footer-column">
+            <h4>Departments</h4>
+            <ul>
+                <li><a href="{{ url_for('views.cityEngineering') }}">City Engineering</a></li>
+                <li><a href="{{ url_for('views.procurement') }}">Procurement</a></li>
+                <li><a href="{{ url_for('views.cityPolice') }}">Municipal Police</a></li>
+            </ul>
+        </div>
+        <!-- Contact Us Column -->
+        <div class="footer-column">
+            <h4>Contact Us</h4>
+            <ul>
+                <li><a href="{{ url_for('views.contact') }}">Contact Information</a></li>
+                <li><a href="{{ url_for('views.help') }}">FAQs</a></li>
+                <li><a href="{{ url_for('views.chatbot') }}">Chat Bot</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <!-- Logo Section -->
+        <div class="footer-logo">
+            <img src="{{ url_for('static', filename='images/POSCC_Logo.jpg') }}" alt="POSCC Logo">
+        </div>
+        <!-- Social Media Icons -->
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <!-- Legal Section -->
+        <div class="footer-legal">
+            <p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | © 2024 POSCC. All Rights Reserved.</p>
+        </div>
+    </div>
+</section>
+
 
    
 

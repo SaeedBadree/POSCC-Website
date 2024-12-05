@@ -68,6 +68,125 @@
             <div class="service-apply">
                 <h4>How to Apply</h4>
                 <p>Visit the Public Health Department with the required documents. Submit the completed forms at the reception desk, make payment at cashier once approved, and receive your badge.</p>
+                <p>Or Complete the form online:</p>
+                <section class="form-section">
+                    <h2>Food Handlers Medical Examination Form</h2>
+                    <form action="{{ url_for('views.submit_food_handlers') }}" method="POST" class="digital-form">
+                        {{ food_handlers_form.hidden_tag() }}
+                    
+                        <!-- General Information Section -->
+                        <h3>General Information</h3>
+                        <div class="form-group">
+                            {{ food_handlers_form.date.label }} 
+                            {{ food_handlers_form.date(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.name.label }} 
+                            {{ food_handlers_form.name(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.sex.label }}
+                            <div>
+                                {{ food_handlers_form.sex(class="form-check-input") }}
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.home_address.label }} 
+                            {{ food_handlers_form.home_address(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.date_of_birth.label }} 
+                            {{ food_handlers_form.date_of_birth(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.identification_no.label }} 
+                            {{ food_handlers_form.identification_no(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.telephone.label }} 
+                            {{ food_handlers_form.telephone(class="form-control") }}
+                        </div>
+                    
+                        <!-- Business Information Section -->
+                        <h3>Business Information</h3>
+                        <div class="form-group">
+                            {{ food_handlers_form.business_name.label }} 
+                            {{ food_handlers_form.business_name(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.business_type.label }} 
+                            {{ food_handlers_form.business_type(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.business_address.label }} 
+                            {{ food_handlers_form.business_address(class="form-control") }}
+                        </div>
+                    
+                        <!-- Family History Section -->
+                        <h3>Family History</h3>
+                        <div class="form-group">
+                            <label>Family History (Check all that apply):</label>
+                            <div>
+                                {{ food_handlers_form.family_typhoid() }} {{ food_handlers_form.family_typhoid.label }}
+                                {{ food_handlers_form.family_tuberculosis() }} {{ food_handlers_form.family_tuberculosis.label }}
+                                {{ food_handlers_form.family_jaundice() }} {{ food_handlers_form.family_jaundice.label }}
+                                {{ food_handlers_form.family_chronic_cough() }} {{ food_handlers_form.family_chronic_cough.label }}
+                                {{ food_handlers_form.family_hospitalization() }} {{ food_handlers_form.family_hospitalization.label }}
+                            </div>
+                            <div>
+                                {{ food_handlers_form.family_other.label }} 
+                                {{ food_handlers_form.family_other(class="form-control") }}
+                            </div>
+                        </div>
+                    
+                        <!-- Personal History Section -->
+                        <h3>Personal History</h3>
+                        <div class="form-group">
+                            <label>Personal History (Check all that apply):</label>
+                            <div>
+                                {{ food_handlers_form.personal_typhoid() }} {{ food_handlers_form.personal_typhoid.label }}
+                                {{ food_handlers_form.personal_tuberculosis() }} {{ food_handlers_form.personal_tuberculosis.label }}
+                                {{ food_handlers_form.personal_jaundice() }} {{ food_handlers_form.personal_jaundice.label }}
+                                {{ food_handlers_form.personal_chronic_cough() }} {{ food_handlers_form.personal_chronic_cough.label }}
+                                {{ food_handlers_form.personal_hospitalization() }} {{ food_handlers_form.personal_hospitalization.label }}
+                                {{ food_handlers_form.personal_asthmatic_attacks() }} {{ food_handlers_form.personal_asthmatic_attacks.label }}
+                                {{ food_handlers_form.personal_allergies() }} {{ food_handlers_form.personal_allergies.label }}
+                            </div>
+                            <div>
+                                {{ food_handlers_form.personal_other.label }} 
+                                {{ food_handlers_form.personal_other(class="form-control") }}
+                            </div>
+                        </div>
+                    
+                        <!-- Declaration Section -->
+                        <h3>Declaration</h3>
+                        <div class="form-group">
+                            {{ food_handlers_form.declaration() }} {{ food_handlers_form.declaration.label }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.applicant_signature.label }} 
+                            {{ food_handlers_form.applicant_signature(class="form-control") }}
+                        </div>
+                    
+                        <div class="form-group">
+                            {{ food_handlers_form.applicant_signature_date.label }} 
+                            {{ food_handlers_form.applicant_signature_date(class="form-control") }}
+                        </div>
+                    
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    
+                </section>
             </div>
         </div>
     </div>
@@ -114,6 +233,54 @@
         <div class="service-apply">
             <h4>How to Apply</h4>
             <p>Fill out the complaint form and submit it to the Public Health Department in person</p>
+            <p>Or complete the form online:</p>
+           
+            <section class="form-section">
+                <h2>Public Complaints Form</h2>
+                <form action="{{ url_for('views.submit_public_complaint') }}" method="POST" class="digital-form">
+                    {{ public_complaint_form.hidden_tag() }}
+            
+                    <!-- Date -->
+                    <div class="form-group">
+                        {{ public_complaint_form.date.label }}
+                        {{ public_complaint_form.date(class="form-control") }}
+                    </div>
+            
+                    <!-- Premises -->
+                    <div class="form-group">
+                        {{ public_complaint_form.premises.label }}
+                        {{ public_complaint_form.premises(class="form-control") }}
+                    </div>
+            
+                    <!-- Nature of Complaint -->
+                    <div class="form-group">
+                        {{ public_complaint_form.nature_of_complaint.label }}
+                        {{ public_complaint_form.nature_of_complaint(class="form-control") }}
+                    </div>
+            
+                    <!-- Complainant Name -->
+                    <div class="form-group">
+                        {{ public_complaint_form.complainant_name.label }}
+                        {{ public_complaint_form.complainant_name(class="form-control") }}
+                    </div>
+            
+                    <!-- Contact Details -->
+                    <div class="form-group">
+                        {{ public_complaint_form.contact_details.label }}
+                        {{ public_complaint_form.contact_details(class="form-control") }}
+                    </div>
+            
+                    <!-- Action Taken -->
+                    <div class="form-group">
+                        {{ public_complaint_form.action_taken.label }}
+                        {{ public_complaint_form.action_taken(class="form-control") }}
+                    </div>
+            
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </section>
+            
         </div>
     </div>
 </div>
